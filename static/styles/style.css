@@ -2390,6 +2390,15 @@ body {
   }
 }
 
+@media (min-width: 513px) {
+  .home-sidebar {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+}
 
 
 
