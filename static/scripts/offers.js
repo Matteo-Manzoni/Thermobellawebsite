@@ -1,29 +1,37 @@
 document.addEventListener("DOMContentLoaded", function() {
   const discountContainer = document.querySelector(".discount-content");
-  discountContainer.addEventListener("click", function() {
-    window.location.href = "templates/buy.html";
-  });
+  if (discountContainer) {
+    discountContainer.addEventListener("click", function() {
+      window.location.href = "templates/buy.html";
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
   const discountContainer = document.querySelector(".discount-content2");
-  discountContainer.addEventListener("click", function() {
-    window.location.href = "buy.html";
-  });
+  if (discountContainer) {
+    discountContainer.addEventListener("click", function() {
+      window.location.href = "buy.html";
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  const discountContainer = document.querySelector(".thermobella-title");
-  discountContainer.addEventListener("click", function() {
-    window.location.href = "templates/buy.html";
-  });
+  const discountLink = document.querySelector(".thermobella-title");
+  if (discountLink) {
+    discountLink.addEventListener("click", function() {
+      window.location.href = "templates/buy.html";
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  const discountContainer = document.querySelector(".thermobella-title2");
-  discountContainer.addEventListener("click", function() {
-    window.location.href = "buy.html";
-  });
+  const discountLink = document.querySelector(".thermobella-title2");
+  if (discountLink) {
+    discountLink.addEventListener("click", function() {
+      window.location.href = "buy.html";
+    });
+  }
 });
 
 function updateCountdown(endTime) {

@@ -12,20 +12,35 @@ function navigateToBuyTH() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Get the current page's URL
-    const currentPageURL = window.location.pathname;
-
-    // Find all content links
-    const contentLinks = document.querySelectorAll(".contents a");
-
-    // Loop through the content links to check if they match the current page's URL
-    contentLinks.forEach(link => {
-      if (link.getAttribute("href") === currentPageURL) {
-        link.classList.add("active"); // Add the "active" class to the current page's link
-      }
-    });
+  // Highlight legacy sidebar links when present
+  const currentPageURL = window.location.pathname;
+  const contentLinks = document.querySelectorAll(".contents a");
+  contentLinks.forEach((link) => {
+    if (link.getAttribute("href") === currentPageURL) {
+      link.classList.add("active");
+    }
   });
 
+  // Mobile navigation toggle for new header
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-navigation');
+
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isVisible = primaryNav.getAttribute('data-visible') === 'true';
+      primaryNav.setAttribute('data-visible', String(!isVisible));
+      navToggle.setAttribute('aria-expanded', String(!isVisible));
+    });
+
+    const navLinks = primaryNav.querySelectorAll('a[href^="#"]');
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        primaryNav.setAttribute('data-visible', 'false');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+});
 
 
 
