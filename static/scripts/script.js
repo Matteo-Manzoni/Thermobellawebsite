@@ -39,14 +39,53 @@ document.addEventListener("DOMContentLoaded", function() {
         navToggle.setAttribute('aria-expanded', 'false');
       });
     });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        primaryNav.setAttribute('data-visible', 'false');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
+
+  // Desktop "More" dropdown handling
+  const navMore = document.querySelector('.nav-more');
+  const navMoreToggle = navMore ? navMore.querySelector('.nav-more-toggle') : null;
+  if (navMore && navMoreToggle) {
+    navMore.dataset.open = 'false';
+    navMoreToggle.setAttribute('aria-expanded', 'false');
+
+    const closeDropdown = () => {
+      navMore.dataset.open = 'false';
+      navMoreToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    navMoreToggle.addEventListener('click', (event) => {
+      const isOpen = navMore.dataset.open === 'true';
+      navMore.dataset.open = String(!isOpen);
+      navMoreToggle.setAttribute('aria-expanded', String(!isOpen));
+      event.stopPropagation();
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!navMore.contains(event.target)) {
+        closeDropdown();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeDropdown();
+      }
+    });
+
+    navMoreToggle.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeDropdown();
+        navMoreToggle.blur();
+      }
+    });
+  }
+
 });
-
-
-
-
-
-
-
-
 

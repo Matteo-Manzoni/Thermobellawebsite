@@ -7,80 +7,103 @@
   <meta name="description" content="Discover the Thermomix TM7 with ThermoBella. Explore features, benefits, finance options, and book a personalised demo today.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="static/styles/style.css">
   <script src="https://kit.fontawesome.com/f4d2f86d5b.js" crossorigin="anonymous"></script>
   <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
 </head>
 <body id="top">
-  <header class="site-header">
+  <header class="site-header" data-sticky>
     <div class="container header-container">
       <a class="brand" href="#top">ThermoBella</a>
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#top">Home</a></li>
+          <li><a href="templates/thermomix.html">What is a Thermomix?</a></li>
+          <li><a href="templates/thermomix.html#tm7">TM7</a></li>
+          <li><a href="templates/buy.html">Order</a></li>
+          <li><a href="templates/demos.html">Demo</a></li>
+          <li><a href="templates/join.html">Become Advisor</a></li>
+          <li><a href="templates/about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav-more">
+            <button class="nav-more-toggle" type="button" aria-haspopup="true" aria-expanded="false">More <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            <div class="nav-more-menu" role="menu">
+              <a role="menuitem" href="templates/buy.html">Order Your TM7</a>
+              <a role="menuitem" href="templates/demos.html#faqs">FAQ</a>
+              <a role="menuitem" href="templates/thermomix.html#comparison">TM6 vs TM7</a>
+              <a role="menuitem" href="templates/thermomix.html#recipes">Recipes</a>
+              <a role="menuitem" href="templates/buy.html#calculator">Price Calculator</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="header-phone" href="tel:+447391585516" aria-label="Call ThermoBella"><i class="fas fa-phone"></i></a>
+        <a class="button button-primary header-order" href="templates/buy.html">Order the TM7</a>
+      </div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
-      <nav class="primary-navigation" id="primary-navigation">
-        <a href="#features">Features</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#stories">Stories</a>
-        <a href="#community">Community</a>
-        <a class="nav-cta" href="templates/buy.html">Pre-Order</a>
-      </nav>
-      <div class="header-contact">
-        <a class="contact-pill" href="tel:+447391585516"><i class="fas fa-phone"></i> 07391 585516</a>
-        <a class="contact-pill" href="mailto:Isabella.spreafico@gmail.com"><i class="far fa-envelope"></i> Email Isabella</a>
-      </div>
     </div>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <img class="hero-media-image" src="static/images/Thermomix20.jpeg" alt="Thermomix TM7 styled on a kitchen counter" loading="lazy">
+        <video class="hero-video" autoplay muted loop playsinline poster="static/images/Thermomix20.jpeg">
+          <source src="static/media/thermomix-hero.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
       <div class="container hero-content">
-        <div class="hero-copy">
+        <div class="hero-panel hero-panel--transparent">
           <p class="eyebrow">Thermomix&reg; TM7 Advisor | London</p>
           <h1 id="hero-title">Revolutionise Your Kitchen: 20+ Appliances in One</h1>
-          <p class="hero-subtitle">The new TM7 pairs cutting-edge technology with the guidance of a dedicated advisor to help you cook smarter, faster, and healthier every day.</p>
+          <p class="hero-subtitle">Cut cooking time in half with guided cooking, precise sensors, and 85,000+ Cookidoo&reg; recipes ready on tap.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="templates/buy.html">Pre-Order Now</a>
-            <a class="button button-secondary" href="templates/demos.html">Book a Demo</a>
+            <a class="button button-primary" href="templates/buy.html">Order the TM7</a>
+            <a class="button button-secondary button-secondary--inverse" href="templates/demos.html">Book a Demo</a>
           </div>
           <ul class="hero-highlights">
-            <li><i class="fas fa-check"></i> Guided cooking with 85,000+ Cookidoo&reg; recipes</li>
-            <li><i class="fas fa-check"></i> 10" touchscreen with open cooking & silent motor</li>
-            <li><i class="fas fa-check"></i> Advisor support from enquiry to your first cook</li>
+            <li><i class="fas fa-check"></i> Guided cooking from prep to plating</li>
+            <li><i class="fas fa-check"></i> 10" touchscreen with open cooking mode</li>
+            <li><i class="fas fa-check"></i> Advisor support from enquiry to everyday use</li>
           </ul>
-        </div>
-        <div class="hero-media">
-          <img src="static/images/Thermomix13.jpeg" alt="Thermomix TM7 on a modern kitchen counter" loading="lazy">
         </div>
       </div>
     </section>
 
-    <section class="feature-snapshot" id="features" aria-label="Top features of the Thermomix TM7">
-      <div class="container feature-grid">
-        <article class="feature-card">
-          <i class="fas fa-bolt"></i>
-          <h3>23+ Guided Functions</h3>
-          <p>Chop, knead, sous-vide, emulsify, steam, and more with precise control.</p>
+    <section class="feature-strip" id="features" aria-label="Thermomix TM7 key highlights">
+      <div class="container feature-strip-grid">
+        <article class="feature-strip-card">
+          <i class="fas fa-utensils"></i>
+          <h3>23+ Modes</h3>
+          <p>Replace over 20 appliances with precision chopping, kneading, milling, and sous-vide.</p>
+          <a href="templates/thermomix.html#features" class="feature-link">Learn more</a>
         </article>
-        <article class="feature-card">
-          <i class="fas fa-tablet-alt"></i>
-          <h3>10" Touchscreen</h3>
-          <p>Navigate recipes effortlessly with an intuitive, brighter, and larger display.</p>
-        </article>
-        <article class="feature-card">
+        <article class="feature-strip-card">
           <i class="fas fa-wifi"></i>
-          <h3>Cookidoo&reg; Connected</h3>
-          <p>Access 85k+ recipes, auto-sync shopping lists, and get updates via Wi-Fi.</p>
+          <h3>Integrated Wi-Fi</h3>
+          <p>Sync Cookidoo&reg; favourites, shopping lists, and updates directly to your TM7.</p>
+          <a href="templates/thermomix.html#connectivity" class="feature-link">Learn more</a>
         </article>
-        <article class="feature-card">
-          <i class="fas fa-volume-mute"></i>
-          <h3>Quiet & Precise</h3>
-          <p>Redesigned motor, improved sensors, and 45% larger Varoma for seamless cooking.</p>
+        <article class="feature-strip-card">
+          <i class="fas fa-volume-down"></i>
+          <h3>Silent Motor</h3>
+          <p>Cook quietly across 40–10,700 RPM while sensors keep every dish consistent.</p>
+          <a href="templates/thermomix.html#performance" class="feature-link">Learn more</a>
+        </article>
+        <article class="feature-strip-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Healthier Routines</h3>
+          <p>Plan balanced meals, batch cook, and reduce food waste with guided inspiration.</p>
+          <a href="templates/thermomix.html#recipes" class="feature-link">Learn more</a>
         </article>
       </div>
     </section>
@@ -89,39 +112,78 @@
       <div class="container benefits-content">
         <div class="benefit-block">
           <div class="benefit-copy">
-            <h2>Cook More, Stress Less</h2>
+            <h2><span class="benefit-icon"><i class="fas fa-clock"></i></span>Cook More, Stress Less</h2>
             <p>Replace over 20 appliances with one TM7. From weeknight dinners to show-stopping desserts, guided recipes make every step effortless.</p>
           </div>
-          <img src="static/images/Thermomix20.jpeg" alt="Thermomix TM7 preparing fresh ingredients" loading="lazy">
+          <div class="benefit-image-wrapper">
+            <img src="static/TM7_images/Thermomix_TM7-Lifestyle_Photo_TM7InYourKitchen_72.webp" alt="Thermomix TM7 preparing dinner on a modern countertop" loading="lazy">
+          </div>
         </div>
-        <div class="benefit-block benefit-block--reverse">
+        <div class="benefit-block">
+          <div class="benefit-image-wrapper">
+            <img src="static/TM7_images/int_master-en_thermomix_tm7-launch_Functionality_Photos_Lifestyle_0351_4x3_3x2.jpeg" alt="Plated Thermomix TM7 meal with fresh ingredients" loading="lazy">
+          </div>
           <div class="benefit-copy">
-            <h2>Healthy, Restaurant-Quality Meals</h2>
+            <h2><span class="benefit-icon"><i class="fas fa-utensils"></i></span>Healthy, Restaurant-Quality Meals</h2>
             <p>Control every ingredient while exploring nutrition-forward recipes curated by chefs and dietitians. Sous-vide, ferment, and slow cook like a pro.</p>
           </div>
-          <img src="static/images/recipe1.jpeg" alt="Healthy meal plated using the Thermomix TM7" loading="lazy">
         </div>
         <div class="benefit-block">
           <div class="benefit-copy">
-            <h2>Your Advisor in Your Kitchen</h2>
-            <p>Isabella guides you from first demo to ongoing mastery. Join live cook-alongs, ask questions anytime, and unlock exclusive ThermoBella community perks.</p>
+            <h2><span class="benefit-icon"><i class="fas fa-user-friends"></i></span>Your Advisor in Your Kitchen</h2>
+            <p>Isabella guides you from your first demo to ongoing mastery. Join live cook-alongs, ask questions anytime, and unlock exclusive ThermoBella community perks.</p>
           </div>
-          <img src="static/images/MUM2.jpeg" alt="Thermomix advisor hosting a cooking session" loading="lazy">
+          <div class="benefit-image-wrapper">
+            <img class="benefit-image benefit-image--focus-bottom" src="static/images/MUM2.jpeg" alt="Thermomix advisor hosting a cooking session" loading="lazy">
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="testimonials" id="stories" aria-label="Customer stories">
+    <section class="dark-highlight" id="pricing" aria-labelledby="why-title">
+      <div class="container dark-highlight-content">
+        <div>
+          <p class="eyebrow eyebrow--light">Why TM7</p>
+          <h2 id="why-title">Smarter Finance, Authentic Support</h2>
+          <p class="dark-highlight-copy">Secure your Thermomix&reg; TM7 with a £269 deposit, unlock interest-free instalments, and enjoy trusted onboarding from an official advisor.</p>
+          <ul class="dark-highlight-list">
+            <li><i class="fas fa-shield-alt"></i> Official Thermomix&reg; Advisor | Advisor ID 140781</li>
+            <li><i class="fas fa-file-invoice-dollar"></i> 3, 6, or 12 month 0% plans plus 12–36 months at 14.9% APR</li>
+            <li><i class="fas fa-star"></i> 4.9★ average customer satisfaction from London & South East clients</li>
+          </ul>
+          <div class="dark-highlight-actions">
+            <a class="button button-primary" href="templates/buy.html">Explore Pricing</a>
+            <a class="button button-outline" href="templates/demos.html">View Demo Dates</a>
+          </div>
+        </div>
+        <div class="trust-badges" role="list">
+          <div class="trust-badge" role="listitem">
+            <i class="fas fa-award"></i>
+            <span>Official Thermomix Advisor</span>
+          </div>
+          <div class="trust-badge" role="listitem">
+            <i class="fas fa-user-check"></i>
+            <span>Diamond Team Leader</span>
+          </div>
+          <div class="trust-badge" role="listitem">
+            <i class="fas fa-heart"></i>
+            <span>Support beyond delivery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="stories" aria-labelledby="testimonial-title">
       <div class="container">
-        <h2>Loved by Busy Families and Foodies</h2>
+        <h2 id="testimonial-title">Loved by Busy Families and Foodies</h2>
         <div class="testimonial-grid">
           <figure class="testimonial-card">
             <blockquote>“We replaced four appliances and now cook healthy meals in half the time. The guided steps keep me confident every night.”</blockquote>
             <figcaption>— Priya, London</figcaption>
           </figure>
           <figure class="testimonial-card">
-            <blockquote>“The TM7’s silent motor and larger screen are game-changers. Isabella’s demos made mastering it a joy.”</blockquote>
-            <figcaption>— Adam & Luca, Greenwich</figcaption>
+            <blockquote>“The TM7’s silent motor and larger screen are game changers. Isabella’s demos made mastering it a joy.”</blockquote>
+            <figcaption>— Adam &amp; Luca, Greenwich</figcaption>
           </figure>
           <figure class="testimonial-card">
             <blockquote>“Batch cooking, fermenting, and even baking bread feels effortless. Cookidoo keeps the inspiration flowing.”</blockquote>
@@ -131,65 +193,78 @@
       </div>
     </section>
 
-    <section class="finance" id="pricing" aria-labelledby="finance-title">
-      <div class="container finance-content">
-        <div class="finance-copy">
-          <p class="eyebrow">Flexible Ways to Own Your TM7</p>
-          <h2 id="finance-title">Secure Yours from £269 Today</h2>
-          <p>Reserve your Thermomix TM7 with a £269 deposit and choose the payment plan that fits your lifestyle. Spread the balance over 3, 6, or 12 months interest-free, or explore 12–36 month finance options at 14.9% APR.</p>
-          <ul class="finance-list">
-            <li><i class="fas fa-calendar-check"></i> No payments due until your TM7 ships</li>
-            <li><i class="fas fa-file-signature"></i> Quick eligibility check with official advisors</li>
-            <li><i class="fas fa-shipping-fast"></i> Free delivery and onboarding session</li>
-          </ul>
-          <div class="finance-actions">
-            <a class="button button-primary" href="templates/buy.html">View Pricing & Plans</a>
-            <a class="button button-link" href="templates/demos.html">Talk to Isabella</a>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Ready to Talk TM7?</p>
+          <h2 id="contact-title">Let’s find the best next step for your kitchen</h2>
+          <p>Share how you’d like to experience the TM7 and Isabella will be in touch within 24 hours.</p>
+          <div class="contact-meta">
+            <a href="tel:+447391585516"><i class="fas fa-phone"></i> 07391 585516</a>
+            <a href="mailto:Isabella.spreafico@gmail.com"><i class="far fa-envelope"></i> Isabella.spreafico@gmail.com</a>
           </div>
         </div>
-        <div class="finance-card">
-          <h3>Popular Plan Example</h3>
-          <p class="finance-price">£269 deposit + £90.00 x 12 months</p>
-          <p class="finance-note">Representative APR 0% • Total £1,349</p>
-          <a class="button button-secondary" href="templates/buy.html">Start Application</a>
-        </div>
+        <form action="https://formspree.io/f/mrgwkgej" method="POST" class="contact-form" novalidate>
+          <div class="form-field">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="contact-enquiry">I’m interested in</label>
+            <select id="contact-enquiry" name="enquiry" required>
+              <option value="" disabled selected>Please choose</option>
+              <option value="order">Ordering a TM7</option>
+              <option value="demo">Booking a demo</option>
+              <option value="advisor">Becoming an advisor</option>
+              <option value="general">General enquiry</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Tell me a little about your kitchen goals..."></textarea>
+          </div>
+          <div class="form-field form-field--checkbox">
+            <input type="checkbox" id="contact-optin" name="opt_in" value="yes" required>
+            <label for="contact-optin">I consent to being contacted about Thermomix&reg; TM7 updates and agree to the privacy policy.</label>
+          </div>
+          <button type="submit" class="button button-primary">Send Message</button>
+        </form>
       </div>
     </section>
 
     <section class="community" id="community" aria-labelledby="community-title">
-      <div class="container community-content">
-        <div class="community-intro">
-          <p class="eyebrow">ThermoBella Community</p>
-          <h2 id="community-title">Inspiration Beyond the Appliance</h2>
-          <p>Join weekly cook-alongs, unlock seasonal recipe bundles, and learn tips straight from the Thermomix advisor network.</p>
-          <a class="button button-secondary" href="templates/join.html">Join the Community</a>
+      <div class="container community-header">
+        <p class="eyebrow">Thermomix Lifestyle</p>
+        <h2 id="community-title">Cook, Learn, Share with ThermoBella</h2>
+        <p>Access curated Cookidoo&reg; collections, seasonal masterclasses, and ongoing advisor support that keeps your TM7 inspired every week.</p>
+        <div class="community-actions">
+          <a class="button button-primary" href="templates/buy.html">Order Now</a>
+          <a class="button button-secondary" href="templates/demos.html">Book a Demo</a>
         </div>
-        <div class="blog-list">
-          <article class="blog-card">
-            <img src="static/images/recipe4.jpeg" alt="Freshly prepared Thermomix meal" loading="lazy">
-            <div class="blog-card-body">
-              <h3>5 Midweek Dinners Ready in 25 Minutes</h3>
-              <p>Use guided recipes to put healthy, flavour-packed plates on the table faster.</p>
-              <a href="templates/thermomix.html" class="blog-link">Explore recipes</a>
-            </div>
-          </article>
-          <article class="blog-card">
-            <img src="static/images/Thermomix21.jpeg" alt="Thermomix advisor leading a virtual session" loading="lazy">
-            <div class="blog-card-body">
-              <h3>Upcoming Virtual Demos & Masterclasses</h3>
-              <p>Reserve your spot for live sessions that showcase new TM7 techniques.</p>
-              <a href="templates/demos.html" class="blog-link">See demo calendar</a>
-            </div>
-          </article>
-          <article class="blog-card">
-            <img src="static/images/Thermomix24.jpeg" alt="Thermomix TM7 accessories laid out" loading="lazy">
-            <div class="blog-card-body">
-              <h3>Accessories & Tips for TM7 Owners</h3>
-              <p>Get the most from your Varoma, blade cover, and new flexible spatula.</p>
-              <a href="templates/buy.html" class="blog-link">View buying guide</a>
-            </div>
-          </article>
-        </div>
+      </div>
+      <div class="container community-cards">
+        <article class="community-card">
+          <i class="fas fa-credit-card" aria-hidden="true"></i>
+          <h3>Order &amp; Finance</h3>
+          <p>Secure your TM7 with a £269 deposit and flexible payment plans tailored to you.</p>
+          <a href="templates/buy.html#calculator" class="community-link">Explore options</a>
+        </article>
+        <article class="community-card">
+          <i class="fas fa-blender" aria-hidden="true"></i>
+          <h3>What is Thermomix?</h3>
+          <p>Discover how one smart device replaces 20+ appliances and guides every recipe step.</p>
+          <a href="templates/thermomix.html" class="community-link">Learn more</a>
+        </article>
+        <article class="community-card">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <h3>Advisor &amp; Community</h3>
+          <p>Join the ThermoBella network for coaching, recipes, and a thriving advisor community.</p>
+          <a href="templates/join.html" class="community-link">Become an advisor</a>
+        </article>
       </div>
     </section>
   </main>
@@ -198,7 +273,11 @@
     <div class="container footer-content">
       <div class="footer-brand">
         <a href="#top">ThermoBella</a>
-        <p>Official Thermomix&reg; advisor for London & the South East. Guiding you from first demo to everyday mastery.</p>
+        <p>Official Thermomix&reg; advisor for London &amp; the South East. Guiding you from first demo to everyday mastery.</p>
+        <div class="footer-cta">
+          <a class="button button-primary" href="templates/buy.html">Order the TM7</a>
+          <a class="button button-secondary" href="templates/demos.html">Book a Demo</a>
+        </div>
         <div class="footer-social">
           <a href="https://www.instagram.com/bellathermomixbimby/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://www.facebook.com/groups/402052367406983/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
@@ -207,16 +286,16 @@
       <div class="footer-links">
         <h3>Explore</h3>
         <a href="#features">Features</a>
-        <a href="#pricing">Pricing & Finance</a>
+        <a href="#pricing">Pricing &amp; Finance</a>
         <a href="templates/demos.html">Book a Demo</a>
         <a href="templates/buy.html">How to Buy</a>
       </div>
       <div class="footer-links">
         <h3>Support</h3>
-        <a href="templates/thermomix.html">What is a Thermomix</a>
+        <a href="templates/thermomix.html">What is a Thermomix?</a>
         <a href="templates/about.html">About Isabella</a>
         <a href="templates/join.html">Become an Advisor</a>
-        <a href="templates/demos.html#faqs">FAQs</a>
+        <a href="#contact">Contact</a>
       </div>
       <div class="footer-newsletter">
         <h3>Stay in the Loop</h3>
@@ -239,5 +318,6 @@
   </footer>
 
   <script src="static/scripts/script.js"></script>
+  <script src="static/scripts/offers.js"></script>
 </body>
 </html>
