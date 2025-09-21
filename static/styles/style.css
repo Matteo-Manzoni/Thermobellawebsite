@@ -260,6 +260,27 @@ header,
   white-space: nowrap;
 }
 
+.nav-mobile-footer {
+  display: none;
+}
+
+.nav-mobile-phone {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-mobile-order {
+  width: 100%;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
 .contact-pill {
   display: inline-flex;
   align-items: center;
