@@ -907,6 +907,10 @@ body.nav-open {
   gap: 8px;
 }
 
+.form-field--full {
+  grid-column: 1 / -1;
+}
+
 .form-field label {
   font-weight: 600;
 }
@@ -3898,6 +3902,98 @@ container-offer{
   text-align: center;
   max-width: 760px;
   margin: 0 auto 56px;
+}
+
+.pill-heading {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.92), rgba(38, 120, 100, 0.92));
+  color: #ffffff;
+  font-size: 1.75rem;
+  box-shadow: 0 25px 60px rgba(17, 66, 38, 0.18);
+}
+
+.order-faqs {
+  background: rgba(76, 175, 80, 0.08);
+}
+
+.order-faq-list {
+  display: grid;
+  gap: 18px;
+}
+
+.order-faq-item {
+  padding: 0 0 16px;
+  border-bottom: 1px solid rgba(15, 40, 25, 0.1);
+}
+
+.order-faq-item:last-child {
+  border-bottom: none;
+}
+
+.order-faq-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.order-faq-toggle svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.order-faq-toggle:is(:hover, :focus-visible) {
+  background: #ffffff;
+  border-color: rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+.order-faq-toggle:focus-visible {
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.25);
+}
+
+.order-faq-toggle.is-open {
+  background: #ffffff;
+  border-color: rgba(76, 175, 80, 0.7);
+  color: var(--color-primary);
+}
+
+.order-faq-toggle.is-open svg {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.order-faq-answer {
+  margin-top: 10px;
+  padding-left: 6px;
+  color: var(--color-text);
+  display: none;
+}
+
+.order-faq-answer.is-open {
+  display: block;
+}
+
+.order-faq-cta {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .section-header p {

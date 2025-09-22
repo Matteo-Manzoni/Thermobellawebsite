@@ -115,11 +115,11 @@
 
     <section class="page-section" aria-labelledby="order-form-title">
       <div class="container section-header">
-        <h2 id="order-form-title">Complete your TM7 request</h2>
+        <h2 id="order-form-title"><span class="pill-heading">Complete your TM7 request</span></h2>
         <p>Submit your details below. I’ll confirm the best finance route, finalise paperwork with Vorwerk UK, and schedule onboarding support.</p>
       </div>
       <div class="container">
-        <form action="https://formspree.io/f/xgeglqvg" method="POST" class="contact-form order-form" id="order-form" novalidate>
+        <form action="https://formspree.io/f/xanpwand" method="POST" class="contact-form order-form" id="order-form" novalidate>
           <div class="order-steps" role="tablist" aria-label="Order steps">
             <button type="button" class="order-step is-active" data-step="0" role="tab" aria-selected="true">1. Personal</button>
             <button type="button" class="order-step" data-step="1" role="tab" aria-selected="false">2. Delivery &amp; plan</button>
@@ -149,27 +149,44 @@
           <div class="order-step-panel" data-step="1" role="tabpanel" hidden>
             <div class="form-grid">
               <div class="form-field">
-                <label for="order-address">Delivery address</label>
-                <textarea id="order-address" name="address" rows="3" required></textarea>
+                <label for="order-country">Country/Region</label>
+                <input id="order-country" name="country" type="text" autocomplete="country-name" placeholder="e.g. United Kingdom" required>
+              </div>
+              <div class="form-field form-field--full">
+                <label for="order-address">Address<span aria-hidden="true">*</span></label>
+                <input id="order-address" name="address" type="text" autocomplete="street-address" required>
               </div>
               <div class="form-field">
-                <label for="order-postcode">Postcode</label>
+                <label for="order-city">City</label>
+                <input id="order-city" name="city" type="text" autocomplete="address-level2" required>
+              </div>
+              <div class="form-field">
+                <label for="order-postcode">Zip / Postal code<span aria-hidden="true">*</span></label>
                 <input id="order-postcode" name="postcode" type="text" autocomplete="postal-code" required>
+              </div>
+              <div class="form-field form-field--checkbox">
+                <input type="checkbox" id="billing-different" name="billing_different" value="yes">
+                <label for="billing-different">My billing address is different</label>
+              </div>
+              <div class="form-field form-field--full" id="billing-address-field" hidden>
+                <label for="order-billing-address">Billing address</label>
+                <textarea id="order-billing-address" name="billing_address" rows="3" placeholder="Add your billing address"></textarea>
               </div>
               <div class="form-field">
                 <label for="order-plan">Preferred finance plan</label>
                 <select id="order-plan" name="finance_plan" required>
-                  <option value="3-month">3 months</option>
-                  <option value="6-month">6 months</option>
-                  <option value="12-month" selected>12 months</option>
-                  <option value="24-month">24 months</option>
-                  <option value="36-month">36 months</option>
+                  <option value="3-month">Divided 3 months</option>
+                  <option value="6-month">Divided 6 months</option>
+                  <option value="12-month" selected>Divided 12 months</option>
+                  <option value="novuna-12">Novuna 12 months</option>
+                  <option value="novuna-24">Novuna 24 months</option>
+                  <option value="novuna-36">Novuna 36 months</option>
                   <option value="pay-in-full">Pay in full</option>
                 </select>
               </div>
-              <div class="form-field">
-                <label for="order-notes">Anything we should know?</label>
-                <textarea id="order-notes" name="notes" rows="3" placeholder="Delivery preferences, ideal onboarding date, dietary goals..."></textarea>
+              <div class="form-field form-field--full">
+                <label for="order-notes">Notes for Isabella</label>
+                <textarea id="order-notes" name="notes" rows="4" placeholder="Let me know about delivery preferences, dietary goals, or questions."></textarea>
               </div>
             </div>
             <div class="form-actions">
@@ -197,6 +214,10 @@
                 <div>
                   <dt>Address</dt>
                   <dd id="summary-address">—</dd>
+                </div>
+                <div id="summary-billing-wrapper" hidden>
+                  <dt>Billing address</dt>
+                  <dd id="summary-billing">—</dd>
                 </div>
                 <div>
                   <dt>Postcode</dt>
@@ -245,28 +266,88 @@
       </div>
     </section>
 
-    <section class="page-section" aria-labelledby="order-faq-title">
+    <section class="page-section page-section--alt order-faqs" aria-labelledby="order-faq-title">
       <div class="container section-header">
         <h2 id="order-faq-title">Finance &amp; ordering FAQs</h2>
         <p>Quick answers to the most common questions. Explore the full <a href="faq.html">FAQ library</a> for more detail.</p>
       </div>
-      <div class="container faq-snippets">
-        <details>
-          <summary>Can I change my finance plan after submitting the form?</summary>
-          <p>Absolutely. I’ll call you to confirm the paperwork and we can adjust the term before anything is signed.</p>
-        </details>
-        <details>
-          <summary>When will my TM7 be delivered?</summary>
-          <p>Standard delivery is 5–7 working days after payment or finance approval. I’ll keep you updated every step.</p>
-        </details>
-        <details>
-          <summary>Do you offer business purchase support?</summary>
-          <p>Yes. I can provide invoices and guidance for business or hospitality clients. Mention this in the form notes.</p>
-        </details>
-        <details>
-          <summary>Is training included?</summary>
-          <p>Every customer receives a personalised onboarding session plus access to ongoing masterclasses and community events.</p>
-        </details>
+      <div class="container order-faq-list" role="list">
+        <div class="order-faq-item" role="listitem">
+          <button type="button" class="order-faq-toggle" aria-expanded="false" aria-controls="faq-answer-1">
+            <span>Can I change my finance plan after I submit the form?</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.47 5.47a.75.75 0 0 1 1.06 0L8 7.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 9.53a.75.75 0 0 1-1.06 0L4.47 6.53a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
+          </button>
+          <div class="order-faq-answer" id="faq-answer-1" hidden>
+            <p>Yes. I’ll call you to confirm paperwork and we can adjust the term before anything is signed.</p>
+          </div>
+        </div>
+        <div class="order-faq-item" role="listitem">
+          <button type="button" class="order-faq-toggle" aria-expanded="false" aria-controls="faq-answer-2">
+            <span>Do I pay anything monthly before my TM7 arrives?</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.47 5.47a.75.75 0 0 1 1.06 0L8 7.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 9.53a.75.75 0 0 1-1.06 0L4.47 6.53a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
+          </button>
+          <div class="order-faq-answer" id="faq-answer-2" hidden>
+            <p>No—there are no monthly payments until your TM7 is dispatched.</p>
+          </div>
+        </div>
+        <div class="order-faq-item" role="listitem">
+          <button type="button" class="order-faq-toggle" aria-expanded="false" aria-controls="faq-answer-3">
+            <span>What finance options do you offer?</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.47 5.47a.75.75 0 0 1 1.06 0L8 7.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 9.53a.75.75 0 0 1-1.06 0L4.47 6.53a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
+          </button>
+          <div class="order-faq-answer" id="faq-answer-3" hidden>
+            <p>0% in-house plan over 3, 6 or 12 months with a £269 deposit, or Novuna finance at 14.9% APR over 12, 24 or 36 months.</p>
+          </div>
+        </div>
+        <div class="order-faq-item" role="listitem">
+          <button type="button" class="order-faq-toggle" aria-expanded="false" aria-controls="faq-answer-4">
+            <span>How are monthly payments calculated?</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.47 5.47a.75.75 0 0 1 1.06 0L8 7.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 9.53a.75.75 0 0 1-1.06 0L4.47 6.53a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
+          </button>
+          <div class="order-faq-answer" id="faq-answer-4" hidden>
+            <p>They’re based on the £1,349 TM7 price with a £269 deposit. 0% plans split £1,080 equally; Novuna follows 14.9% APR representative.</p>
+          </div>
+        </div>
+        <div class="order-faq-item" role="listitem">
+          <button type="button" class="order-faq-toggle" aria-expanded="false" aria-controls="faq-answer-5">
+            <span>When will my TM7 be delivered?</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.47 5.47a.75.75 0 0 1 1.06 0L8 7.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 9.53a.75.75 0 0 1-1.06 0L4.47 6.53a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
+          </button>
+          <div class="order-faq-answer" id="faq-answer-5" hidden>
+            <p>Standard delivery is 5–7 working days after payment or finance approval. I’ll keep you updated every step.</p>
+          </div>
+        </div>
+        <div class="order-faq-item" role="listitem">
+          <button type="button" class="order-faq-toggle" aria-expanded="false" aria-controls="faq-answer-6">
+            <span>Is training included?</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.47 5.47a.75.75 0 0 1 1.06 0L8 7.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 9.53a.75.75 0 0 1-1.06 0L4.47 6.53a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
+          </button>
+          <div class="order-faq-answer" id="faq-answer-6" hidden>
+            <p>Yes—every customer receives a personal onboarding session plus access to masterclasses and community events.</p>
+          </div>
+        </div>
+        <div class="order-faq-item" role="listitem">
+          <button type="button" class="order-faq-toggle" aria-expanded="false" aria-controls="faq-answer-7">
+            <span>Do you support business purchases?</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.47 5.47a.75.75 0 0 1 1.06 0L8 7.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 9.53a.75.75 0 0 1-1.06 0L4.47 6.53a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
+          </button>
+          <div class="order-faq-answer" id="faq-answer-7" hidden>
+            <p>Absolutely. I can provide invoices and guidance for business or hospitality clients—add a note on the order form.</p>
+          </div>
+        </div>
+        <div class="order-faq-item" role="listitem">
+          <button type="button" class="order-faq-toggle" aria-expanded="false" aria-controls="faq-answer-8">
+            <span>Can I speak to someone before ordering?</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.47 5.47a.75.75 0 0 1 1.06 0L8 7.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 9.53a.75.75 0 0 1-1.06 0L4.47 6.53a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
+          </button>
+          <div class="order-faq-answer" id="faq-answer-8" hidden>
+            <p>Of course—book a demo or message me and I’ll help you choose the best plan for your kitchen.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container order-faq-cta">
+        <p>Still have a question?</p>
+        <a class="button button-primary" href="contact.html">Ask Isabella</a>
       </div>
     </section>
   </main>
@@ -302,7 +383,7 @@
       <div class="footer-newsletter">
         <h3>Stay in the Loop</h3>
         <p>Get seasonal recipes, TM7 tips, and demo invites straight to your inbox.</p>
-        <form action="https://formspree.io/f/mrgwkgej" method="POST" class="newsletter-form">
+        <form action="https://formspree.io/f/xanpwand" method="POST" class="newsletter-form">
           <label class="sr-only" for="newsletter-email">Email address</label>
           <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" required>
           <button type="submit" class="button button-primary">Subscribe</button>
@@ -348,6 +429,10 @@
     const financeSummary = document.getElementById('finance-summary');
     const planInputs = Array.from(document.querySelectorAll('input[name="plan"]'));
     const depositSelect = document.getElementById('finance-deposit');
+    const billingToggle = document.getElementById('billing-different');
+    const billingField = document.getElementById('billing-address-field');
+    const billingSummaryWrapper = document.getElementById('summary-billing-wrapper');
+    const billingSummary = document.getElementById('summary-billing');
 
     function formatCurrency(value, decimals = 2) {
       return `£${Number(value).toLocaleString('en-GB', {
@@ -410,6 +495,12 @@
       buildFinanceTable(currentPlan);
     });
 
+    billingToggle.addEventListener('change', () => {
+      const isDifferent = billingToggle.checked;
+      billingField.hidden = !isDifferent;
+      billingField.querySelector('textarea').toggleAttribute('required', isDifferent);
+    });
+
     hidePromoDeposit();
     buildFinanceTable('divided');
 
@@ -434,8 +525,20 @@
         document.getElementById('summary-name').textContent = form.elements['name'].value || '—';
         document.getElementById('summary-email').textContent = form.elements['email'].value || '—';
         document.getElementById('summary-phone').textContent = form.elements['phone'].value || '—';
-        document.getElementById('summary-address').textContent = form.elements['address'].value || '—';
+
+        const addressParts = [
+          form.elements['address'].value,
+          `${form.elements['city'].value || ''} ${form.elements['postcode'].value || ''}`.trim(),
+          form.elements['country'].value,
+        ].filter(Boolean);
+        document.getElementById('summary-address').textContent = addressParts.join(', ') || '—';
         document.getElementById('summary-postcode').textContent = form.elements['postcode'].value || '—';
+
+        const billingValue = form.elements['billing_address']?.value.trim() || '';
+        const showBilling = billingToggle.checked && billingValue.length > 0;
+        billingSummaryWrapper.hidden = !showBilling;
+        billingSummary.textContent = showBilling ? billingValue : '—';
+
         const plan = form.elements['finance_plan'];
         document.getElementById('summary-plan').textContent = plan.options[plan.selectedIndex].text;
       }
@@ -463,13 +566,41 @@
           showStep(currentStep - 1);
         }
       }
-      if (event.target.classList.contains('order-step')) {
-        const targetStep = Number(event.target.dataset.step);
-        if (targetStep <= currentStep) {
-          showStep(targetStep);
-        }
+    if (event.target.classList.contains('order-step')) {
+      const targetStep = Number(event.target.dataset.step);
+      if (targetStep <= currentStep) {
+        showStep(targetStep);
       }
+    }
+  });
+
+    const faqToggles = Array.from(document.querySelectorAll('.order-faq-toggle'));
+    faqToggles.forEach((button) => {
+      const answer = document.getElementById(button.getAttribute('aria-controls'));
+      if (!answer) return;
+
+      const toggleAnswer = () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        button.classList.toggle('is-open', !expanded);
+        if (!expanded) {
+          answer.hidden = false;
+          answer.classList.add('is-open');
+        } else {
+          answer.hidden = true;
+          answer.classList.remove('is-open');
+        }
+      };
+
+      button.addEventListener('click', toggleAnswer);
+      button.addEventListener('keydown', (event) => {
+        if (event.key === ' ' || event.key === 'Enter') {
+          event.preventDefault();
+          toggleAnswer();
+        }
+      });
     });
+
   </script>
 </body>
 </html>
