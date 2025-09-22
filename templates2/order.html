@@ -60,9 +60,15 @@
           <h1 id="order-title">The TM7 is here!</h1>
         </div>
         <div class="order-hero-gallery">
-          <img src="../static/images/Thermomix20.jpeg" alt="Thermomix TM7 assembled" loading="lazy">
-          <img src="../static/TM7_images/17_1800x1800.webp" alt="Thermomix TM7 accessories" loading="lazy">
-          <img src="../static/TM7_images/de_int_master-en_thermomix_tm7-launch_Story-Photos_KA_1022_2800x1400-2x1-1.jpg" alt="Thermomix TM7 side profile" loading="lazy">
+          <div class="order-hero-card">
+            <img src="../static/images/Thermomix20.jpeg" alt="Thermomix TM7 assembled" loading="lazy">
+          </div>
+          <div class="order-hero-card order-hero-card--accent">
+            <img src="../static/TM7_images/17_1800x1800.webp" alt="Thermomix TM7 accessories" loading="lazy">
+          </div>
+          <div class="order-hero-card">
+            <img src="../static/TM7_images/de_int_master-en_thermomix_tm7-launch_Story-Photos_KA_1022_2800x1400-2x1-1.jpg" alt="Thermomix TM7 side profile" loading="lazy">
+          </div>
         </div>
         <p class="order-hero-text">Place a small deposit today and choose the finance plan that suits your household. I’ll guide you through every step—from placing the order to your first guided cook.</p>
         <div class="cta-row order-hero-actions">
@@ -75,62 +81,35 @@
     <section class="page-section page-section--alt" id="finance-options" aria-labelledby="finance-title">
       <div class="container section-header">
         <h2 id="finance-title">Finance options tailored to you</h2>
-        <p>Select your preferred deposit to see updated monthly instalments across popular timelines.</p>
+        <p>Select a plan to see your monthly payments. Figures based on TM7 price of £1,349 with a £269 deposit.</p>
       </div>
-      <div class="container finance-controls">
-        <label for="finance-deposit">Choose your deposit:</label>
-        <select id="finance-deposit" name="deposit">
-          <option value="269">£269 deposit (most popular)</option>
-          <option value="0">£0 deposit</option>
-        </select>
-        <p class="finance-controls__note">* Figures based on TM7 price of £1,499. Final quote confirmed during your advisor call.</p>
-      </div>
-      <div class="container finance-table-wrapper">
-        <table class="finance-table" aria-describedby="finance-title">
-          <thead>
-            <tr>
-              <th scope="col">Plan length</th>
-              <th scope="col">Deposit</th>
-              <th scope="col">Monthly payment</th>
-              <th scope="col">Total paid</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr data-term="3">
-              <th scope="row">3 months</th>
-              <td class="finance-table__deposit">£269</td>
-              <td class="finance-table__monthly">£410.33</td>
-              <td class="finance-table__total">£1,500.00</td>
-            </tr>
-            <tr data-term="6">
-              <th scope="row">6 months</th>
-              <td class="finance-table__deposit">£269</td>
-              <td class="finance-table__monthly">£205.17</td>
-              <td class="finance-table__total">£1,500.00</td>
-            </tr>
-            <tr data-term="12">
-              <th scope="row">12 months</th>
-              <td class="finance-table__deposit">£269</td>
-              <td class="finance-table__monthly">£102.58</td>
-              <td class="finance-table__total">£1,500.00</td>
-            </tr>
-            <tr data-term="24">
-              <th scope="row">24 months</th>
-              <td class="finance-table__deposit">£269</td>
-              <td class="finance-table__monthly">£51.29</td>
-              <td class="finance-table__total">£1,500.00</td>
-            </tr>
-            <tr data-term="36">
-              <th scope="row">36 months</th>
-              <td class="finance-table__deposit">£269</td>
-              <td class="finance-table__monthly">£34.19</td>
-              <td class="finance-table__total">£1,500.00</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="container finance-summary" aria-live="polite">
-        <p><strong>Current selection:</strong> £<span id="selected-deposit">269</span> deposit with monthly payments from £<span id="selected-monthly">34.19</span>. Chat with me to tailor instalments around your household budget.</p>
+      <div class="container finance-plans-card" data-plan="divided" data-deposit="269">
+        <div class="finance-plans-card__controls" role="group" aria-label="Finance plan selection">
+          <div class="finance-toggle">
+            <input type="radio" id="plan-divided" name="plan" value="divided" checked>
+            <label for="plan-divided">0% Divided payments</label>
+            <input type="radio" id="plan-novuna" name="plan" value="novuna">
+            <label for="plan-novuna">Novuna 14.9% APR</label>
+            <span class="finance-toggle__indicator" aria-hidden="true"></span>
+          </div>
+          <label class="finance-deposit" for="finance-deposit">Deposit:
+            <select id="finance-deposit" name="deposit">
+              <option value="269" selected>£269</option>
+              <option value="0" data-hidden="true">£0 (promo)</option>
+            </select>
+          </label>
+        </div>
+        <div class="finance-table-wrapper">
+          <table class="finance-table" id="finance-table" aria-live="polite"></table>
+        </div>
+        <p class="finance-plans-card__summary" id="finance-summary" aria-live="polite">Current selection: £269 deposit over 12 months at £90.00/month. Chat with me to tailor instalments to your household budget.</p>
+        <div class="finance-summary finance-summary--bullets">
+          <ul>
+            <li>✅ Quick finance check</li>
+            <li>✅ No monthly payments until your TM7 arrives</li>
+            <li>✅ Advisor-led purchase with ongoing support</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -343,35 +322,96 @@
   <script src="../static/scripts/script.js"></script>
   <script src="../static/scripts/offers.js"></script>
   <script>
-    const financeDepositSelect = document.getElementById('finance-deposit');
-    const selectedDepositEl = document.getElementById('selected-deposit');
-    const selectedMonthlyEl = document.getElementById('selected-monthly');
-    const financeRows = document.querySelectorAll('.finance-table tbody tr');
+    const financePlans = {
+      divided: {
+        title: 'Divided Payment &mdash; 0% APR',
+        rows: [
+          { term: '3 months', monthly: 360.0, total: 1349.0 },
+          { term: '6 months', monthly: 180.0, total: 1349.0 },
+          { term: '12 months', monthly: 90.0, total: 1349.0 },
+        ],
+        highlight: 2,
+      },
+      novuna: {
+        title: 'Novuna Finance &mdash; 14.9% APR representative',
+        rows: [
+          { term: '12 months', monthly: 96.96, total: 1432.52 },
+          { term: '24 months', monthly: 51.84, total: 1513.16 },
+          { term: '36 months', monthly: 36.9, total: 1597.40 },
+        ],
+        highlight: 0,
+      },
+    };
 
-    const terms = [3, 6, 12, 24, 36];
-    const price = 1499;
+    const financeCard = document.querySelector('.finance-plans-card');
+    const financeTable = document.getElementById('finance-table');
+    const financeSummary = document.getElementById('finance-summary');
+    const planInputs = Array.from(document.querySelectorAll('input[name="plan"]'));
+    const depositSelect = document.getElementById('finance-deposit');
 
-    function updateFinanceTable(depositValue) {
-      const deposit = Number(depositValue);
-      financeRows.forEach((row, index) => {
-        const term = terms[index];
-        const remaining = price - deposit;
-        const monthly = term === 0 ? price : remaining / term;
-        row.querySelector('.finance-table__deposit').textContent = `£${deposit.toLocaleString('en-GB', { minimumFractionDigits: 0 })}`;
-        row.querySelector('.finance-table__monthly').textContent = `£${monthly.toFixed(2)}`;
-        const total = deposit + monthly * term;
-        row.querySelector('.finance-table__total').textContent = `£${total.toFixed(2)}`;
-      });
-      selectedDepositEl.textContent = deposit.toLocaleString('en-GB', { minimumFractionDigits: 0 });
-      const longestTerm = terms[terms.length - 1];
-      const longestMonthly = (price - deposit) / longestTerm;
-      selectedMonthlyEl.textContent = longestMonthly.toFixed(2);
+    function formatCurrency(value, decimals = 2) {
+      return `£${Number(value).toLocaleString('en-GB', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      })}`;
     }
 
-    updateFinanceTable(financeDepositSelect.value);
-    financeDepositSelect.addEventListener('change', (event) => {
-      updateFinanceTable(event.target.value);
+    function hidePromoDeposit() {
+      const zeroOption = Array.from(depositSelect.options).find((option) => option.value === '0');
+      if (zeroOption?.dataset.hidden === 'true') {
+        zeroOption.hidden = true;
+      }
+    }
+
+    function buildFinanceTable(planKey) {
+      const { title, rows, highlight } = financePlans[planKey];
+      const deposit = Number(depositSelect.value);
+
+      const header = `
+        <caption>${title}</caption>
+        <thead>
+          <tr>
+            <th scope="col">Plan length</th>
+            <th scope="col">Deposit</th>
+            <th scope="col">Monthly payment</th>
+            <th scope="col">${planKey === 'divided' ? 'Total' : 'Total incl. interest'}</th>
+          </tr>
+        </thead>
+      `;
+
+      const body = rows
+        .map((row, index) => {
+          const highlightAttr = index === highlight ? ' data-highlight="true"' : '';
+          return `
+            <tr${highlightAttr}>
+              <th scope="row">${row.term}</th>
+              <td>${formatCurrency(deposit, 0)}</td>
+              <td>${formatCurrency(row.monthly)}</td>
+              <td>${formatCurrency(row.total)}</td>
+            </tr>
+          `;
+        })
+        .join('');
+
+      financeTable.innerHTML = `${header}<tbody>${body}</tbody>`;
+      financeCard.dataset.plan = planKey;
+      financeCard.dataset.deposit = String(deposit);
+
+      const focusRow = rows[highlight];
+      financeSummary.textContent = `Current selection: ${formatCurrency(deposit, 0)} deposit over ${focusRow.term} at ${formatCurrency(focusRow.monthly)}/month. Chat with me to tailor instalments to your household budget.`;
+    }
+
+    planInputs.forEach((input) => {
+      input.addEventListener('change', () => buildFinanceTable(input.value));
     });
+
+    depositSelect.addEventListener('change', () => {
+      const currentPlan = planInputs.find((input) => input.checked)?.value || 'divided';
+      buildFinanceTable(currentPlan);
+    });
+
+    hidePromoDeposit();
+    buildFinanceTable('divided');
 
     const form = document.getElementById('order-form');
     const stepButtons = Array.from(form.querySelectorAll('.order-step'));
