@@ -82,6 +82,7 @@ body {
   background-color: var(--color-background);
   text-align: left;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 header,
@@ -4685,6 +4686,7 @@ container-offer{
 
   .finance-plans-card {
     padding: 24px;
+    box-shadow: 0 24px 50px rgba(15, 40, 25, 0.1);
   }
 
   .finance-toggle {
@@ -4693,6 +4695,55 @@ container-offer{
 
   .finance-toggle label {
     width: 100%;
+  }
+
+  .finance-table-wrapper {
+    overflow-x: visible;
+    box-shadow: none;
+  }
+
+  .finance-table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .finance-table thead {
+    display: none;
+  }
+
+  .finance-table tbody {
+    display: grid;
+    gap: 16px;
+  }
+
+  .finance-table tr {
+    display: grid;
+    gap: 12px;
+    background: #ffffff;
+    border-radius: var(--radius-medium);
+    padding: 16px;
+    box-shadow: 0 18px 36px rgba(15, 40, 25, 0.12);
+  }
+
+  .finance-table td,
+  .finance-table th {
+    display: block;
+    padding: 0;
+    border: none;
+  }
+
+  .finance-table th {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-heading);
+  }
+
+  .finance-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    color: var(--color-heading);
+    margin-bottom: 4px;
   }
 }
 

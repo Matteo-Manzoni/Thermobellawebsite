@@ -451,6 +451,7 @@
     function buildFinanceTable(planKey) {
       const { title, rows, highlight } = financePlans[planKey];
       const deposit = Number(depositSelect.value);
+      const totalLabel = planKey === 'divided' ? 'Total' : 'Total incl. interest';
 
       const header = `
         <caption>${title}</caption>
@@ -459,7 +460,7 @@
             <th scope="col">Plan length</th>
             <th scope="col">Deposit</th>
             <th scope="col">Monthly payment</th>
-            <th scope="col">${planKey === 'divided' ? 'Total' : 'Total incl. interest'}</th>
+            <th scope="col">${totalLabel}</th>
           </tr>
         </thead>
       `;
@@ -470,9 +471,9 @@
           return `
             <tr${highlightAttr}>
               <th scope="row">${row.term}</th>
-              <td>${formatCurrency(deposit, 0)}</td>
-              <td>${formatCurrency(row.monthly)}</td>
-              <td>${formatCurrency(row.total)}</td>
+              <td data-label="Deposit">${formatCurrency(deposit, 0)}</td>
+              <td data-label="Monthly payment">${formatCurrency(row.monthly)}</td>
+              <td data-label="${totalLabel}">${formatCurrency(row.total)}</td>
             </tr>
           `;
         })
