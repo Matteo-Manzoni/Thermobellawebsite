@@ -1335,25 +1335,25 @@ p {
 /* Styles for the title */
 
 
-.thermobella-title {
+.Thermomixbella-title {
   font-size: 50px;
   font-family: 'Great Vibes', cursive;
   color: var(--color-primary);
 }
 
-.thermobella-title2 {
+.Thermomixbella-title2 {
   font-size: 50px;
   font-family: 'Great Vibes', cursive;
   color: var(--color-primary);
 }
 
 @media only screen and (max-width: 768px) {
-  .thermobella-title {
+  .Thermomixbella-title {
     font-size: 40px;
     color: var(--color-primary);
   }
 
-  .thermobella-title2 {
+  .Thermomixbella-title2 {
     font-size: 40px;
     color: var(--color-primary);
   }
@@ -4111,9 +4111,132 @@ container-offer{
   color: var(--color-text-muted);
 }
 
+.finance-plans-card {
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: var(--radius-large);
+  padding: 32px;
+  box-shadow: 0 40px 90px rgba(15, 40, 25, 0.12);
+  display: grid;
+  gap: 28px;
+}
+
+.finance-plans-card__controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.finance-toggle {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: repeat(2, auto);
+  background: rgba(76, 175, 80, 0.12);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+  align-items: center;
+}
+
+.finance-toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.finance-toggle label {
+  position: relative;
+  z-index: 1;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-heading);
+}
+
+.finance-toggle__indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(15, 40, 25, 0.12);
+  transition: transform 0.25s ease;
+}
+
+.finance-toggle__indicator {
+  transform: translateX(0);
+}
+
+#plan-divided:checked ~ .finance-toggle__indicator {
+  transform: translateX(0);
+}
+
+#plan-novuna:checked ~ .finance-toggle__indicator {
+  transform: translateX(100%);
+}
+
+.finance-toggle input:checked + label {
+  color: var(--color-primary);
+}
+
+.finance-deposit select {
+  padding: 8px 16px;
+  border-radius: var(--radius-small);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  font-weight: 600;
+}
+
+.finance-plans-card__summary {
+  text-align: center;
+  font-weight: 600;
+}
+
+.finance-plans-card table tr[data-highlight="true"] {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.finance-plans-card table tr[data-highlight="true"] th,
+.finance-plans-card table tr[data-highlight="true"] td {
+  font-weight: 700;
+}
+
+.finance-plans-card table tr {
+  transition: background 0.2s ease;
+}
+
+.finance-plans-card table tr:hover {
+  background: rgba(76, 175, 80, 0.08);
+}
+
 .finance-summary {
   text-align: center;
   margin-top: 32px;
+}
+
+.finance-summary--bullets {
+  margin-top: 0;
+}
+
+.finance-summary--bullets ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.finance-summary--bullets li {
+  background: rgba(76, 175, 80, 0.12);
+  color: var(--color-heading);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
 }
 
 .order-steps {
@@ -4364,6 +4487,133 @@ container-offer{
   color: var(--color-text);
 }
 
+.page-hero--order {
+  background-color: rgba(76, 175, 80, 0.12);
+  padding: 64px 0 48px;
+}
+
+
+.page-hero__content--stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.order-hero-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.order-hero-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.62));
+  border-radius: 28px;
+  padding: 18px;
+  box-shadow: 0 28px 60px rgba(13, 56, 33, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-hero-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.order-hero-card:nth-child(1) {
+  transform: translateY(12px);
+}
+
+.order-hero-card:nth-child(3) {
+  transform: translateY(24px);
+}
+
+.order-hero-card--accent {
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(240, 252, 246, 0.85));
+  box-shadow: 0 32px 65px rgba(17, 66, 38, 0.18);
+  transform: translateY(-8px);
+}
+
+.order-hero-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 36px 70px rgba(17, 66, 38, 0.2);
+}
+
+.order-hero-actions {
+  margin-top: 12px;
+}
+
+.order-hero-text {
+  max-width: 720px;
+  margin: 0;
+  color: var(--color-text);
+}
+
+@media (max-width: 1024px) {
+  .order-hero-gallery {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-hero-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 520px;
+  }
+
+  .order-hero-card:nth-child(1),
+  .order-hero-card:nth-child(3) {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .order-hero-gallery {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+
+  .order-hero-card img {
+    height: 220px;
+  }
+
+  .order-hero-card:nth-child(n+2) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .finance-plans-card {
+    padding: 24px;
+  }
+
+  .finance-plans-card__controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .finance-toggle {
+    width: 100%;
+  }
+
+  .finance-toggle label {
+    text-align: center;
+    width: 100%;
+  }
+}
+
 @media (max-width: 992px) {
   .page-hero__content,
   .split-section {
@@ -4400,4 +4650,25 @@ container-offer{
   .calculator-form {
     padding: 24px;
   }
+}
+.finance-summary--bullets {
+  margin-top: 0;
+}
+
+.finance-summary--bullets ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.finance-summary--bullets li {
+  background: rgba(76, 175, 80, 0.12);
+  color: var(--color-heading);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
 }

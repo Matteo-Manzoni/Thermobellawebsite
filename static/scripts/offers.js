@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  const discountLink = document.querySelector(".thermobella-title");
+  const discountLink = document.querySelector(".Thermomixbella-title");
   if (discountLink) {
     discountLink.addEventListener("click", function() {
       window.location.href = "templates/buy.html";
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  const discountLink = document.querySelector(".thermobella-title2");
+  const discountLink = document.querySelector(".Thermomixbella-title2");
   if (discountLink) {
     discountLink.addEventListener("click", function() {
       window.location.href = "buy.html";
