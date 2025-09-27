@@ -39,53 +39,57 @@ document.addEventListener("DOMContentLoaded", function() {
         navToggle.setAttribute('aria-expanded', 'false');
       });
     });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        primaryNav.setAttribute('data-visible', 'false');
-        navToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
   }
-
   // Desktop "More" dropdown handling
   const navMore = document.querySelector('.nav-more');
   const navMoreToggle = navMore ? navMore.querySelector('.nav-more-toggle') : null;
   if (navMore && navMoreToggle) {
-    navMore.dataset.open = 'false';
-    navMoreToggle.setAttribute('aria-expanded', 'false');
-
-    const closeDropdown = () => {
-      navMore.dataset.open = 'false';
-      navMoreToggle.setAttribute('aria-expanded', 'false');
+    const setOpen = (open) => {
+      navMoreToggle.setAttribute('aria-expanded', String(open));
+      navMore.classList.toggle('is-open', open);
     };
 
+    setOpen(false);
+
     navMoreToggle.addEventListener('click', (event) => {
-      const isOpen = navMore.dataset.open === 'true';
-      navMore.dataset.open = String(!isOpen);
-      navMoreToggle.setAttribute('aria-expanded', String(!isOpen));
       event.stopPropagation();
+      const isOpen = navMoreToggle.getAttribute('aria-expanded') === 'true';
+      setOpen(!isOpen);
     });
 
     document.addEventListener('click', (event) => {
       if (!navMore.contains(event.target)) {
-        closeDropdown();
+        setOpen(false);
       }
     });
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
-        closeDropdown();
+        setOpen(false);
       }
     });
 
-    navMoreToggle.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        closeDropdown();
-        navMoreToggle.blur();
+    navMore.addEventListener('mouseenter', () => {
+      if (window.matchMedia('(hover: hover)').matches) {
+        setOpen(true);
+      }
+    });
+
+    navMore.addEventListener('mouseleave', () => {
+      if (window.matchMedia('(hover: hover)').matches) {
+        setOpen(false);
+      }
+    });
+
+    navMore.addEventListener('focusin', () => {
+      setOpen(true);
+    });
+
+    navMore.addEventListener('focusout', (event) => {
+      if (!navMore.contains(event.relatedTarget)) {
+        setOpen(false);
       }
     });
   }
 
 });
-
