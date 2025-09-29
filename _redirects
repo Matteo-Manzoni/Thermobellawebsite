@@ -1,1 +1,14 @@
-/  /templates2/order.html 200
+/templates2/order.html        /order/         301
+/templates2/demo.html         /demo/          301
+/templates2/about.html        /about/         301
+/templates2/advisor.html      /advisor/       301
+/templates2/faq.html          /faq/           301
+/templates2/compare.html      /compare/       301
+/templates2/recipes.html      /recipes/       301
+/templates2/thermomix.html    /thermomix/     301
+/templates2/calculator.html   /calculator/    301
+/templates2/contact.html      /contact/       301
+/templates2/order-your-tm7.html /order-your-tm7/ 301
+/templates2/tm7.html          /tm7/           301
+# Optional: uncomment to redirect home to order
+#/ /order/ 302
