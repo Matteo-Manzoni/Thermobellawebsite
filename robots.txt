@@ -1,4 +1,20 @@
+# Allow everything by default
 User-agent: *
+Allow: /
+
+# Explicitly allow Facebook's crawler
+User-agent: facebookexternalhit
+Allow: /
+
+# Explicitly allow Twitter's crawler
+User-agent: Twitterbot
+Allow: /
+
+# (Optional) Also allow LinkedIn/Pinterest if you use them
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterestbot
 Allow: /
 
 Sitemap: https://thermomixbella.com/sitemap.xml
