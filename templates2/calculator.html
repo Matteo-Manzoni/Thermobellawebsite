@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thermomix TM7 Price Calculator | Thermomixbella</title>
-  <meta name="description" content="Compare the cost of owning a Thermomix TM7 against takeaways or multiple appliances with Thermomixbella’s savings calculator." />
-  <link rel="canonical" href="https://thermomixbella.com/templates2/calculator.html">
+  <title>Thermomix TM7 Demo Planner | Thermomixbella</title>
+  <meta name="description" content="Prepare for your Thermomix TM7 demo with reflective prompts and planning tips from Thermomixbella." />
+  <link rel="canonical" href="https://thermomixbella.com/calculator/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../static/styles/style.css">
   <script src="https://kit.fontawesome.com/f4d2f86d5b.js" crossorigin="anonymous"></script>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body id="top">
   <header class="site-header" data-sticky>
@@ -21,7 +22,7 @@
         <ul class="nav-list">
           <li><a href="../index.html">Home</a></li>
           <li><a href="tm7.html">TM7</a></li>
-          <li><a href="order.html">Order</a></li>
+          <li><a href="order.html">Request a Demo</a></li>
           <li><a href="demo.html">Book a Demo</a></li>
           <li><a href="advisor.html">Become an Advisor</a></li>
           <li><a href="about.html" aria-current="page">About</a></li>
@@ -33,17 +34,17 @@
               <a role="menuitem" href="faq.html">FAQ</a>
               <a role="menuitem" href="compare.html">TM6 vs TM7</a>
               <a role="menuitem" href="recipes.html">Recipes</a>
-              <a role="menuitem" href="calculator.html">Price Calculator</a>
+              <a role="menuitem" href="calculator.html">Demo Planner</a>
             </div>
           </li>
         </ul>
         <div class="nav-mobile-footer">
           <a class="nav-mobile-phone" href="tel:+447391585516"><i class="fas fa-phone"></i> 07391 585516</a>
-          <a class="button button-primary nav-mobile-order" href="order.html">Order the TM7</a>
+          <a class="button button-primary nav-mobile-order" href="order.html">Request a Demo</a>
         </div>
       </nav>
       <div class="header-actions">
-        <a class="button button-primary header-order" href="order.html">Order the TM7</a>
+        <a class="button button-primary header-order" href="order.html">Request a Demo</a>
       </div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
@@ -53,16 +54,16 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-hero" aria-labelledby="calculator-title">
+    <main>
+    <section class="page-hero" aria-labelledby="planner-hero-title">
       <div class="container page-hero__content">
         <div class="page-hero__copy">
-          <p class="eyebrow">Savings Calculator</p>
-          <h1 id="calculator-title">See how the TM7 pays for itself</h1>
-          <p>Compare your current spending on takeaways or replacement appliances to the cost of investing in a Thermomix TM7. Small daily savings add up quickly.</p>
+          <p class="eyebrow">Demo Prep Toolkit</p>
+          <h1 id="planner-hero-title">Plan your perfect Thermomix TM7 experience</h1>
+          <p>Reflect on the meals you love, the routines you want to streamline, and the people you want to cook for. Bring this into your demo so we can focus on what matters most to you.</p>
           <div class="cta-row">
-            <a class="button button-primary" href="order.html">Order the TM7</a>
-            <a class="button button-secondary" href="demo.html">Book a Demo</a>
+            <a class="button button-primary" href="order.html#demo-request-title">Request a Demo Call</a>
+            <a class="button button-secondary" href="demo.html">Explore Demo Formats</a>
           </div>
         </div>
         <div class="page-hero__media">
@@ -71,84 +72,50 @@
       </div>
     </section>
 
-    <section class="page-section" aria-labelledby="spend-title">
+    <section class="page-section" aria-labelledby="planner-title">
       <div class="container section-header">
-        <h2 id="spend-title">Compare your monthly spend</h2>
-        <p>Enter your average spending on convenience food and the appliances you might replace. The calculator shows your potential savings when you switch to cooking with the TM7.</p>
-      </div>
-      <div class="container calculator-grid">
-        <form class="calculator-form" id="tm7-calculator" novalidate>
-          <div class="form-field">
-            <label for="takeaway-spend">Monthly takeaway spend (£)</label>
-            <input id="takeaway-spend" type="number" min="0" value="180">
-          </div>
-          <div class="form-field">
-            <label for="groceries-spend">Ready-meal &amp; convenience spend (£)</label>
-            <input id="groceries-spend" type="number" min="0" value="80">
-          </div>
-          <div class="form-field">
-            <label for="appliance-cost">Annual small appliance spend (£)</label>
-            <input id="appliance-cost" type="number" min="0" value="120">
-          </div>
-          <div class="form-field">
-            <label for="months">Months to compare</label>
-            <select id="months">
-              <option value="12" selected>12 months</option>
-              <option value="24">24 months</option>
-              <option value="36">36 months</option>
-            </select>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="button button-primary">Calculate savings</button>
-          </div>
-        </form>
-        <div class="calculator-results" id="calculator-results" aria-live="polite">
-          <div class="result-card">
-            <h3>Estimated savings</h3>
-            <p class="result-highlight">£<span id="result-savings">0</span></p>
-            <p>You could cover the TM7 within your existing budget by redirecting this amount.</p>
-          </div>
-          <div class="result-card">
-            <h3>TM7 monthly equivalent</h3>
-            <p class="result-highlight">£<span id="result-monthly">0</span>/month</p>
-            <p>Based on a £1,499 TM7 price. Compare this with finance plans on the order page.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-section page-section--alt" aria-labelledby="benefits-summary">
-      <div class="container section-header">
-        <h2 id="benefits-summary">Value beyond the numbers</h2>
-        <p>Customers often highlight savings that don’t show up on a calculator.</p>
+        <h2 id="planner-title">Capture your TM7 priorities</h2>
+        <p>Jot down ideas in each column so your demo speaks directly to your lifestyle.</p>
       </div>
       <div class="container card-grid card-grid--three">
         <article class="info-card">
-          <div class="icon-circle"><i class="fas fa-seedling"></i></div>
-          <h3>Less food waste</h3>
-          <p>Batch cooking and precise weighing help you use every ingredient before it spoils.</p>
+          <div class="icon-circle"><i class="fas fa-utensils"></i></div>
+          <h3>Meals &amp; moments</h3>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Weeknight dishes that need to be faster</li>
+            <li><i class="fas fa-check"></i> Signature recipes you’d love to elevate</li>
+            <li><i class="fas fa-check"></i> Occasions you cook for (family, friends, clients)</li>
+          </ul>
         </article>
         <article class="info-card">
-          <div class="icon-circle"><i class="fas fa-heart"></i></div>
-          <h3>Healthier habits</h3>
-          <p>Prep smoothies, soups, and snacks from whole foods, reducing processed purchases.</p>
+          <div class="icon-circle"><i class="fas fa-clock"></i></div>
+          <h3>Routines to streamline</h3>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Prep tasks that take the longest today</li>
+            <li><i class="fas fa-check"></i> Appliances you’d like to replace or declutter</li>
+            <li><i class="fas fa-check"></i> Dietary goals or allergies to accommodate</li>
+          </ul>
         </article>
         <article class="info-card">
-          <div class="icon-circle"><i class="fas fa-home"></i></div>
-          <h3>Fewer gadgets</h3>
-          <p>Replace blenders, slow cookers, bread makers, and more—freeing up space and budget.</p>
+          <div class="icon-circle"><i class="fas fa-users"></i></div>
+          <h3>Your TM7 support circle</h3>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> People you’ll invite to the demo</li>
+            <li><i class="fas fa-check"></i> Family members who’ll use the TM7</li>
+            <li><i class="fas fa-check"></i> Ideas for weekly cook-alongs or batch days</li>
+          </ul>
         </article>
       </div>
     </section>
 
-    <section class="page-section cta-section" aria-labelledby="calculator-cta">
+    <section class="page-section page-section--alt" aria-labelledby="next-steps-title">
       <div class="container section-header">
-        <h2 id="calculator-cta">Ready to invest in your kitchen?</h2>
-        <p>Let’s tailor a finance plan that fits your lifestyle.</p>
+        <h2 id="next-steps-title">Next steps with Thermomixbella</h2>
+        <p>Bring your notes to the demo and we’ll build on them together. I’ll send tailored recipes and onboarding resources afterwards.</p>
       </div>
       <div class="container cta-row">
-        <a class="button button-primary" href="order.html">View finance options</a>
-        <a class="button button-secondary" href="demo.html">Book a Demo</a>
+        <a class="button button-primary" href="order.html#demo-request-title">Share your priorities</a>
+        <a class="button button-secondary" href="contact.html">Ask a question</a>
       </div>
     </section>
   </main>
@@ -159,7 +126,7 @@
         <a href="#top">Thermomixbella</a>
         <p>Official Thermomix&reg; advisor for London &amp; the South East. Guiding you from first demo to everyday mastery.</p>
         <div class="footer-cta">
-          <a class="button button-primary" href="order.html">Order the TM7</a>
+          <a class="button button-primary" href="order.html">Request a Demo</a>
           <a class="button button-secondary" href="demo.html">Book a Demo</a>
         </div>
         <div class="footer-social">
@@ -169,10 +136,10 @@
       </div>
       <div class="footer-links">
         <h3>Explore</h3>
-        <a href="../index.html#features">Features</a>
-        <a href="order.html">Pricing &amp; Finance</a>
+        <a href="/#features">Features</a>
+        <a href="order.html#demo-request">Demo Journey</a>
         <a href="demo.html">Book a Demo</a>
-        <a href="order.html">How to Buy</a>
+        <a href="order.html">Request a Demo Call</a>
       </div>
       <div class="footer-links">
         <h3>Support</h3>
@@ -203,46 +170,5 @@
 
   <script src="../static/scripts/script.js"></script>
   <script src="../static/scripts/offers.js"></script>
-  <script>
-    const monthsSelect = document.getElementById('months');
-    const form = document.getElementById('tm7-calculator');
-    const savingsEl = document.getElementById('result-savings');
-    const monthlyEl = document.getElementById('result-monthly');
-
-    const tm7Price = 1499;
-
-    function formatCurrency(value) {
-      return Number(value).toLocaleString('en-GB', {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-      });
-    }
-
-    function formatCurrencyWithPence(value) {
-      return Number(value).toLocaleString('en-GB', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      });
-    }
-
-    function calculateSavings(event) {
-      event.preventDefault();
-      const takeaway = Number(document.getElementById('takeaway-spend').value || 0);
-      const convenience = Number(document.getElementById('groceries-spend').value || 0);
-      const appliances = Number(document.getElementById('appliance-cost').value || 0);
-      const months = Number(monthsSelect.value);
-
-      const annualisedAppliance = appliances * (months / 12);
-      const totalCurrent = (takeaway + convenience) * months + annualisedAppliance;
-      const difference = Math.max(totalCurrent - tm7Price, 0);
-      savingsEl.textContent = formatCurrency(difference);
-
-      const monthlyEquivalent = tm7Price / months;
-      monthlyEl.textContent = formatCurrencyWithPence(monthlyEquivalent);
-    }
-
-    form.addEventListener('submit', calculateSavings);
-    calculateSavings(new Event('submit'));
-  </script>
 </body>
 </html>

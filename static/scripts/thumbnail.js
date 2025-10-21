@@ -13,33 +13,3 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-    var paymentButton = document.getElementById('discount-offer2');
-    var paymentSection = document.getElementById('offer-container'); // Confirm the ID here
-
-    paymentButton.addEventListener('click', function() {
-      paymentSection.scrollIntoView({ behavior: 'smooth' });
-    });
-});
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var paymentButton = document.getElementById('payment-button');
-    var paymentSection = document.getElementById('form-container'); // Confirm the ID here
-
-    paymentButton.addEventListener('click', function() {
-      paymentSection.scrollIntoView({ behavior: 'smooth' });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    var paymentButton = document.getElementById('payment-button2');
-    var paymentSection = document.getElementById('form-container'); // Confirm the ID here
-
-    paymentButton.addEventListener('click', function() {
-      paymentSection.scrollIntoView({ behavior: 'smooth' });
-    });
-});
