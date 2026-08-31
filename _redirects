@@ -1,21 +1,43 @@
-# Old templates2/* pages (deleted). Forced so the rule wins even if a file returns.
-/templates2/order.html          /order/            301!
-/templates2/demo.html           /demo/             301!
-/templates2/about.html          /about/            301!
-/templates2/advisor.html        /advisor/          301!
-/templates2/faq.html            /faq/              301!
-/templates2/compare.html        /compare/          301!
-/templates2/recipes.html        /recipes/          301!
-/templates2/thermomix.html      /thermomix/        301!
-/templates2/calculator.html     /calculator/       301!
-/templates2/contact.html        /contact/          301!
-/templates2/order-your-tm7.html /order-your-tm7/   301!
-/templates2/tm7.html            /tm7/              301!
-/templates2/order-experiments.html /order/         301!
+# Old pages under templates/ and templates2/ were deleted (they duplicated every
+# real page). Netlify served each one at TWO live URLs: /path.html and, via clean
+# URLs, the extensionless /path. Both forms are redirected below so no legacy or
+# indexed link 404s. The ! forces the rule: without it Netlify would serve a
+# matching static file in preference to the redirect, which is why the previous
+# rules silently returned 200.
 
-# Original templates/* pages (deleted).
-/templates/about.html           /about/            301!
-/templates/buy.html             /order/            301!
-/templates/demos.html           /demo/             301!
-/templates/join.html            /advisor/          301!
-/templates/thermomix.html       /thermomix/        301!
+/templates2/order.html              /order/             301!
+/templates2/order                   /order/             301!
+/templates2/demo.html               /demo/              301!
+/templates2/demo                    /demo/              301!
+/templates2/about.html              /about/             301!
+/templates2/about                   /about/             301!
+/templates2/advisor.html            /advisor/           301!
+/templates2/advisor                 /advisor/           301!
+/templates2/faq.html                /faq/               301!
+/templates2/faq                     /faq/               301!
+/templates2/compare.html            /compare/           301!
+/templates2/compare                 /compare/           301!
+/templates2/recipes.html            /recipes/           301!
+/templates2/recipes                 /recipes/           301!
+/templates2/thermomix.html          /thermomix/         301!
+/templates2/thermomix               /thermomix/         301!
+/templates2/calculator.html         /calculator/        301!
+/templates2/calculator              /calculator/        301!
+/templates2/contact.html            /contact/           301!
+/templates2/contact                 /contact/           301!
+/templates2/order-your-tm7.html     /order-your-tm7/    301!
+/templates2/order-your-tm7          /order-your-tm7/    301!
+/templates2/tm7.html                /tm7/               301!
+/templates2/tm7                     /tm7/               301!
+/templates2/order-experiments.html  /order/             301!
+/templates2/order-experiments       /order/             301!
+/templates/about.html               /about/             301!
+/templates/about                    /about/             301!
+/templates/buy.html                 /order/             301!
+/templates/buy                      /order/             301!
+/templates/demos.html               /demo/              301!
+/templates/demos                    /demo/              301!
+/templates/join.html                /advisor/           301!
+/templates/join                     /advisor/           301!
+/templates/thermomix.html           /thermomix/         301!
+/templates/thermomix                /thermomix/         301!
