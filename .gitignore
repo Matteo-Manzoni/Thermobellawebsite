@@ -6,3 +6,6 @@ refs/
 # Impeccable working files. Netlify publishes ".", so these must never ship.
 PRODUCT.md
 .impeccable/
+
+# Session entrypoint. Netlify publishes ".", so this must not ship.
+CLAUDE.md
