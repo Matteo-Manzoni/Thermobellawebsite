@@ -4,14 +4,7 @@ Static HTML/CSS/JS site for thermomixbella.com, promoting Thermomix TM7 demos.
 
 ## Which branch deploys
 
-> **Netlify builds `Test1`, not `main`.** Pushing to `main` does NOT update the live
-> site. Both branches currently point at the same commit; keep them in step until the
-> production branch is switched.
-
-To switch it, in the Netlify UI: **Project configuration → Build & deploy → Continuous
-deployment → Branches and deploy contexts → Edit settings → Production branch → `main`**.
-The REST API accepts `build_settings.repo_branch` and silently ignores it, so this cannot
-be scripted. Once it is switched, delete `Test1` and update this section.
+Netlify builds `main`. A push to `main` is live within seconds, and there is no staging.
 
 ## Deploying
 
@@ -24,8 +17,19 @@ Verify first with a draft deploy, which leaves production untouched:
 
 Promote by pushing the branch, so the repo and the live site never diverge.
 
-`main` and `redesign` are in the allowed-branches list, so a `redesign` branch gets its
-own preview URL. Add any other branch to that list before expecting it to build.
+`redesign` is in the allowed-branches list, so a `redesign` branch gets its own preview
+URL. Add any other branch to that list before expecting it to build.
+
+To change the production branch via the API, PATCH a **top-level `repo` object** carrying
+the full descriptor. Sending `build_settings.repo_branch`, or a partial `repo` object, is
+accepted and silently ignored:
+
+    curl -X PATCH "https://api.netlify.com/api/v1/sites/$SITE_ID" \
+      -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+      -d '{"repo":{"provider":"github","repo_type":"git",
+           "repo_path":"Matteo-Manzoni/Thermobellawebsite",
+           "repo_url":"https://github.com/Matteo-Manzoni/Thermobellawebsite",
+           "repo_branch":"main","dir":".","installation_id":66862190}}'
 
 ## Gotchas
 
