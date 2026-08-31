@@ -4969,3 +4969,14 @@ container-offer{
   border-radius: 999px;
   font-weight: 600;
 }
+
+/* Service-area list on the contact page. Replaced an embedded map that pointed
+   at the wrong part of London and could not be read by crawlers. */
+.area-list {
+  columns: 2;
+  column-gap: 32px;
+  margin: 16px 0 24px;
+  padding-left: 20px;
+}
+.area-list li { margin-bottom: 8px; break-inside: avoid; }
+@media (max-width: 600px) { .area-list { columns: 1; } }
