@@ -4980,3 +4980,7 @@ container-offer{
 }
 .area-list li { margin-bottom: 8px; break-inside: avoid; }
 @media (max-width: 600px) { .area-list { columns: 1; } }
+
+/* Provenance line under the TM7 specification table. Every published figure
+   carries its source and the date it was checked. */
+.spec-source { font-size: 0.85rem; opacity: 0.75; margin-top: 12px; }

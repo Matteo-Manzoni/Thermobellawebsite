@@ -24,32 +24,194 @@
   <meta name="twitter:description" content="Discover the Thermomix TM7 during a tailored demo and ongoing advisor support from Thermomixbella.">
   <meta name="twitter:image" content="https://thermomixbella.com/static/images/thermomixbella-share.png">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Thermomixbella",
-    "url": "https://thermomixbella.com/",
-    "logo": "https://thermomixbella.com/static/images/favicon.png",
-    "sameAs": [
-      "https://www.instagram.com/thermomixbella",
-      "https://www.facebook.com/thermomixbella"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+44 7391 585516",
-      "contactType": "Sales",
-      "areaServed": "GB",
-      "availableLanguage": "en"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thermomixbella.com/#organization",
+      "name": "Thermomixbella",
+      "url": "https://thermomixbella.com/",
+      "logo": "https://thermomixbella.com/static/images/favicon.png",
+      "description": "Independent Thermomix Advisor offering TM7 demonstrations in South West London and online across the UK and Ireland.",
+      "founder": {
+        "@id": "https://thermomixbella.com/#isabella"
+      },
+      "sameAs": [
+        "https://www.instagram.com/bellathermomixbimby/",
+        "https://www.facebook.com/groups/402052367406983/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+447391585516",
+        "email": "Isabella.spreafico@gmail.com",
+        "contactType": "sales",
+        "areaServed": "GB",
+        "availableLanguage": "en"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://thermomixbella.com/#isabella",
+      "name": "Isabella Spreafico",
+      "jobTitle": "Independent Thermomix Advisor",
+      "url": "https://thermomixbella.com/about/",
+      "image": "https://thermomixbella.com/static/images/MUM2.jpeg",
+      "worksFor": {
+        "@id": "https://thermomixbella.com/#organization"
+      },
+      "knowsAbout": [
+        "Thermomix TM7",
+        "Thermomix TM6",
+        "Guided cooking",
+        "Cookidoo",
+        "Batch cooking"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://thermomixbella.com/#demo",
+      "name": "Thermomix TM7 demonstration",
+      "serviceType": "Thermomix TM7 demonstration",
+      "description": "A free, no-obligation Thermomix TM7 demonstration, hosted in your own kitchen across South West London or online anywhere in the UK and Ireland.",
+      "provider": {
+        "@id": "https://thermomixbella.com/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Twickenham"
+        },
+        {
+          "@type": "City",
+          "name": "St Margarets"
+        },
+        {
+          "@type": "City",
+          "name": "Strawberry Hill"
+        },
+        {
+          "@type": "City",
+          "name": "Richmond"
+        },
+        {
+          "@type": "City",
+          "name": "Ham"
+        },
+        {
+          "@type": "City",
+          "name": "Petersham"
+        },
+        {
+          "@type": "City",
+          "name": "Teddington"
+        },
+        {
+          "@type": "City",
+          "name": "Hampton"
+        },
+        {
+          "@type": "City",
+          "name": "Hampton Hill"
+        },
+        {
+          "@type": "City",
+          "name": "Hampton Wick"
+        },
+        {
+          "@type": "City",
+          "name": "Whitton"
+        },
+        {
+          "@type": "City",
+          "name": "Isleworth"
+        },
+        {
+          "@type": "City",
+          "name": "Osterley"
+        },
+        {
+          "@type": "City",
+          "name": "Hounslow"
+        },
+        {
+          "@type": "City",
+          "name": "Feltham"
+        },
+        {
+          "@type": "City",
+          "name": "Ashford"
+        },
+        {
+          "@type": "City",
+          "name": "Sunbury-on-Thames"
+        },
+        {
+          "@type": "City",
+          "name": "Kingston upon Thames"
+        },
+        {
+          "@type": "City",
+          "name": "Surbiton"
+        },
+        {
+          "@type": "City",
+          "name": "Thames Ditton"
+        },
+        {
+          "@type": "City",
+          "name": "East Molesey"
+        },
+        {
+          "@type": "City",
+          "name": "West Molesey"
+        },
+        {
+          "@type": "City",
+          "name": "Barnes"
+        },
+        {
+          "@type": "City",
+          "name": "Mortlake"
+        },
+        {
+          "@type": "City",
+          "name": "East Sheen"
+        },
+        {
+          "@type": "City",
+          "name": "Chiswick"
+        },
+        {
+          "@type": "City",
+          "name": "Brentford"
+        }
+      ],
+      "availableChannel": [
+        {
+          "@type": "ServiceChannel",
+          "name": "In-person demo",
+          "serviceUrl": "https://thermomixbella.com/demo/"
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "Virtual demo",
+          "serviceUrl": "https://thermomixbella.com/demo/",
+          "availableLanguage": "en"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://thermomixbella.com/#website",
+      "url": "https://thermomixbella.com/",
+      "name": "Thermomixbella",
+      "publisher": {
+        "@id": "https://thermomixbella.com/#organization"
+      }
     }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://thermomixbella.com/",
-    "name": "Thermomixbella"
-  }
+  ]
+}
   </script>
 </head>
 <body id="top">
@@ -226,6 +388,8 @@
           </div>
         </div>
         <form action="https://formspree.io/f/xanpwand" method="POST" class="contact-form">
+          <input type="hidden" name="_source" value="/">
+          <input type="hidden" name="_subject" value="Thermomixbella enquiry from /">
           <div class="form-field">
             <label for="contact-name">Name</label>
             <input type="text" id="contact-name" name="name" required autocomplete="name">
@@ -323,6 +487,8 @@
         <h3>Stay in the Loop</h3>
         <p>Get seasonal recipes, TM7 tips, and demo invites straight to your inbox.</p>
         <form action="https://formspree.io/f/xanpwand" method="POST" class="newsletter-form">
+          <input type="hidden" name="_source" value="/">
+          <input type="hidden" name="_subject" value="Thermomixbella newsletter from /">
           <label class="sr-only" for="newsletter-email">Email address</label>
           <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" required>
           <button type="submit" class="button button-primary">Subscribe</button>
