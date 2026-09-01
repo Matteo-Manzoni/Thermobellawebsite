@@ -19,15 +19,29 @@ video {
   display: block;
 }
 
-/* Prose links. The site had no global rule at all, so every in-body link rendered
-   as the browser default blue. Components that colour their own links (nav, footer,
-   buttons, .card-link) are more specific and still win. */
-a {
+/* Prose links.
+
+   Twice now a global 'a' rule has broken a component: a bare a:hover repainted every
+   green button's label invisible, and the :not() chain written to fix that then
+   out-specified .nav-list a and turned the whole nav green. The lesson is that this
+   rule must not be global at all. Scope it to running text, and components keep
+   their own colours without a specificity fight. */
+main p > a,
+main li > a,
+main dd > a,
+main dt > a,
+main figcaption > a,
+main td > a {
   color: var(--color-primary);
   text-underline-offset: 3px;
 }
 
-a:hover {
+main p > a:hover,
+main li > a:hover,
+main dd > a:hover,
+main dt > a:hover,
+main figcaption > a:hover,
+main td > a:hover {
   color: var(--color-primary-dark);
 }
 
@@ -252,6 +266,7 @@ header,
   align-items: center;
   justify-content: center;
   flex: 1 1 auto;
+  min-width: 0;
   margin: 0 32px;
   min-width: 0;
 }
@@ -396,28 +411,9 @@ header,
   flex-shrink: 0;
 }
 
-.header-phone {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: rgba(44, 107, 48, 0.12);
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.header-phone i {
-  font-size: 1rem;
-}
-
-.header-phone:hover,
-.header-phone:focus {
-  background-color: rgba(44, 107, 48, 0.24);
-  color: var(--color-primary-dark);
-}
+/* The old header rendered the phone as a 36px circular icon button. The new header
+   shows the number as text, and that fixed width was clipping it to "07391 58551"
+   with the last digit under the CTA, plus leaving a grey circle behind it. */
 
 .header-order {
   padding: 12px 26px;
@@ -599,6 +595,7 @@ body.nav-open {
 .button-primary:hover,
 .button-primary:focus {
   background-color: var(--color-primary-dark);
+  color: var(--color-on-dark);
   transform: translateY(-2px);
 }
 
@@ -5235,4 +5232,98 @@ container-offer{
 
 .food-strip + .container {
   margin-top: var(--space-lg);
+}
+
+/* Header, rebuilt 2026-09-01. Canon's is a wordmark, a short row of destinations
+   and one action; the old one carried eight items plus a dropdown plus a button. */
+.site-header {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-tint-border);
+}
+
+.site-header[data-sticky] {
+  background-color: rgba(251, 250, 247, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: nowrap;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4375rem;
+  letter-spacing: var(--tracking-brand);
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 30px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-list a:hover {
+  color: var(--color-primary);
+}
+
+.nav-list a[aria-current="page"] {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+.header-phone {
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;   /* it was being squashed to 36px and the last digit sat under the button */
+}
+
+.header-phone:hover {
+  color: var(--color-primary);
+}
+
+.header-order {
+  padding: 12px 22px;
+  box-shadow: none;
+}
+
+@media (max-width: 1100px) {
+  .header-phone {
+    display: none;
+  }
+
+  .nav-list {
+    gap: 20px;
+  }
 }
