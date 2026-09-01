@@ -231,7 +231,11 @@
         return;
       }
       const suggestions = matchRecipes(value);
-      results.innerHTML = suggestions.map((item) => `<p>${item}</p>`).join('');
+      results.replaceChildren(...suggestions.map((item) => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = item;
+        return paragraph;
+      }));
     });
   </script>
 </body>

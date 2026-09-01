@@ -10,33 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/styles/style.css">
-    <script>
-    document.querySelectorAll('.order-faq-toggle').forEach((button) => {
-      const answer = document.getElementById(button.getAttribute('aria-controls'));
-      if (!answer) return;
-
-      const toggle = () => {
-        const expanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!expanded));
-        button.classList.toggle('is-open', !expanded);
-        if (!expanded) {
-          answer.hidden = false;
-          answer.classList.add('is-open');
-        } else {
-          answer.hidden = true;
-          answer.classList.remove('is-open');
-        }
-      };
-
-      button.addEventListener('click', toggle);
-      button.addEventListener('keydown', (event) => {
-        if (event.key === ' ' || event.key === 'Enter') {
-          event.preventDefault();
-          toggle();
-        }
-      });
-    });
-  </script>
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <meta property="og:title" content="Request a Thermomix TM7 Demo | Thermomixbella">
@@ -298,7 +271,7 @@
     <div class="container footer-content">
       <div class="footer-brand">
         <a href="#top">Thermomixbella</a>
-        <p>Official Thermomix&amp;reg; advisor for London &amp; the South East. Guiding you from first demo to everyday mastery.</p>
+        <p>Official Thermomix&reg; advisor for London &amp; the South East. Guiding you from first demo to everyday mastery.</p>
         <div class="footer-cta">
           <a class="button button-primary" href="/order/">Request a Demo</a>
           <a class="button button-secondary" href="/demo/">Book a Demo</a>
