@@ -1,16 +1,3 @@
-
-function navigateToDemos() {
-  window.location.href = "templates/demos.html"; // Adjust the path as needed
-}
-
-function navigateToBuy() {
-  window.location.href = "templates/buy.html"; // Adjust the path as needed
-}
-
-function navigateToBuyTH() {
-  window.location.href = "buy.html"; // Adjust the path as needed
-}
-
 document.addEventListener("DOMContentLoaded", function() {
   // Highlight legacy sidebar links when present
   const currentPageURL = window.location.pathname;
