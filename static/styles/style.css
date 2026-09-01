@@ -484,7 +484,7 @@ body.nav-open {
 
 .site-header[data-sticky] {
   backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(251, 250, 247, 0.95);
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.05);
 }
 
@@ -495,7 +495,7 @@ body.nav-open {
   align-items: center;
   overflow: hidden;
   z-index: 1;
-  background: linear-gradient(135deg, rgba(44, 107, 48, 0.08), rgba(44, 107, 48, 0.08));
+  background: linear-gradient(135deg, rgba(44, 107, 48, 0.10), rgba(44, 107, 48, 0.03));
 }
 
 .hero-media {
@@ -906,7 +906,7 @@ body.nav-open {
 
 .finance {
   padding: 96px 0;
-  background: linear-gradient(120deg, rgba(44, 107, 48, 0.12), rgba(44, 107, 48, 0.1));
+  background: linear-gradient(120deg, rgba(44, 107, 48, 0.14), rgba(44, 107, 48, 0.04));
 }
 
 .finance-content {
@@ -1487,10 +1487,6 @@ h3 {
   font-size: var(--text-card);
   line-height: 1.3;
   letter-spacing: var(--tracking-card);
-}
-
-h3 {
-  font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -4107,7 +4103,21 @@ container-offer{
 
 .page-section--dark {
   background: var(--color-dark);
-  color: #ffffff;
+  color: var(--color-on-dark);
+}
+
+.page-section--dark h1,
+.page-section--dark h2,
+.page-section--dark h3,
+.page-section--dark h4,
+.page-section--dark h5,
+.page-section--dark h6 {
+  color: var(--color-on-dark);
+}
+
+.page-section--dark p,
+.page-section--dark li {
+  color: var(--color-on-dark-muted);
 }
 
 .cta-section {
