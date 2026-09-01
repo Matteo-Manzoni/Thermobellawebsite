@@ -4976,3 +4976,41 @@ container-offer{
     height: 200px;
   }
 }
+
+/* Breadcrumb. Visible markup exists so that the BreadcrumbList schema describes
+   something a visitor can actually see, which is what Google requires. */
+.breadcrumb {
+  padding: var(--space-md) 0 0;
+  font-size: var(--text-label);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-text-faint);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: var(--space-2xs);
+  color: var(--color-tint-border);
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--color-text);
+  font-weight: 600;
+}

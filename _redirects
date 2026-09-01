@@ -41,3 +41,10 @@
 /templates/join                     /advisor/           301!
 /templates/thermomix.html           /thermomix/         301!
 /templates/thermomix                /thermomix/         301!
+
+# /order-your-tm7/ removed 2026-09-01: 139 words duplicating /order/ for the same
+# intent and the same form. Netlify serves clean URLs, so both forms need a rule.
+/order-your-tm7/index.html          /order/             301!
+/order-your-tm7/                    /order/             301!
+/order-your-tm7                     /order/             301!
+

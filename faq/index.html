@@ -229,6 +229,16 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thermomixbella.com/" },
+      { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://thermomixbella.com/faq/" }
+    ]
+  }
+  </script>
 </head>
 <body id="top">
   <header class="site-header" data-sticky>
@@ -272,6 +282,15 @@
   </header>
 
   <main>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol>
+        <li><a href="/">Home</a></li>
+        <li><span aria-current="page">FAQ</span></li>
+        </ol>
+      </div>
+    </nav>
+
     <section class="page-hero" aria-labelledby="faq-title">
       <div class="container page-hero__content">
         <div class="page-hero__copy">
