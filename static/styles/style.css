@@ -19,13 +19,15 @@ video {
   display: block;
 }
 
-/* Containers: make sure side padding doesn’t push beyond viewport */
+/* Containers. One definition only: this rule and a second .container further
+   down used to coexist by accident, with the later one winning on width. */
 .container {
+  position: relative;
+  width: min(100%, var(--container-width));
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
-  max-width: var(--container-width, 1200px);
 }
 
 /* Primary suspects for slight overflow */
@@ -70,23 +72,85 @@ video {
   width: 100%;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap');
+/* Fonts are loaded by a <link> in every page head. An @import here would be
+   ignored anyway: it sits after other rules, which is an invalid position. */
 
 :root {
-  --color-background: #ffffff;
-  --color-background-alt: #f7f7f7;
-  --color-primary: #4caf50;
-  --color-primary-dark: #3a8b3f;
-  --color-accent: #1aa39c;
-  --color-text: #333333;
-  --color-text-muted: #6b6b6b;
-  --color-heading: #1f1f1f;
-  --shadow-soft: 0 20px 45px rgba(30, 60, 60, 0.08);
-  --radius-large: 24px;
-  --radius-medium: 16px;
-  --radius-small: 8px;
+  /* ---- Canon palette -------------------------------------------------- */
+  /* Source: thermobella-docs/design/artboards/Canon.dc.html, chosen 2026-09-01. */
+  --color-background: #fbfaf7;        /* warm off-white page ground */
+  --color-background-alt: #eef3ee;    /* tinted section panel */
+  --color-surface: #ffffff;           /* cards sitting on the ground */
+
+  --color-primary: #2c6b30;           /* the single action colour */
+  --color-primary-dark: #1e4620;      /* its hover */
+  --color-primary-tint: #eaf1e9;      /* pills and chips */
+  --color-tint-border: #d8e2d9;
+
+  --color-text: #22201d;
+  --color-text-muted: #55504a;
+  --color-text-faint: #6d6862;
+  --color-heading: #22201d;
+
+  --color-dark: #22201d;              /* the dark CTA panel */
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #c4bfb8;
+  --color-on-dark-faint: #b3aca4;
+
+  --color-field-bg: #fbfaf7;
+  --color-field-border: #ddd8d1;
+  --color-field-border-muted: #b9b2a9;
+
+  --shadow-soft: 0 16px 40px rgba(34, 32, 29, 0.08);
+  --shadow-raised: 0 24px 56px rgba(34, 32, 29, 0.12);
+
+  /* ---- Type ------------------------------------------------------------ */
+  /* The stylesheet had no type tokens at all before this: 110 font-size
+     declarations, none of them tokenised. */
+  --font-heading: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --font-body: 'Public Sans', system-ui, -apple-system, Arial, sans-serif;
+
+  --text-hero: 3.125rem;   /* 50px */
+  --text-section: 2.5rem;  /* 40px */
+  --text-panel: 2.125rem;  /* 34px */
+  --text-sub: 1.5rem;      /* 24px */
+  --text-card: 1.25rem;    /* 20px */
+  --text-lead: 1.125rem;   /* 18px */
+  --text-body-lg: 1.0625rem; /* 17px */
+  --text-body: 1rem;       /* 16px */
+  --text-body-sm: 0.9375rem; /* 15px */
+  --text-pill: 0.875rem;   /* 14px */
+  --text-label: 0.8125rem; /* 13px */
+  --text-caption: 0.75rem; /* 12px */
+
+  --leading-hero: 1.08;
+  --leading-section: 1.1;
+  --leading-body: 1.65;
+  --leading-prose: 1.7;
+
+  --tracking-hero: -0.028em;
+  --tracking-panel: -0.025em;
+  --tracking-brand: -0.02em;
+  --tracking-card: -0.015em;
+
+  /* ---- Rhythm ---------------------------------------------------------- */
+  --space-2xs: 0.375rem;  /* 6px  */
+  --space-xs: 0.625rem;   /* 10px */
+  --space-sm: 0.75rem;    /* 12px */
+  --space-md: 1.5rem;     /* 24px */
+  --space-lg: 2rem;       /* 32px */
+  --space-xl: 3.5rem;     /* 56px */
+  --space-2xl: 4rem;      /* 64px */
+  --card-padding: 1.875rem; /* 30px */
+
+  /* ---- Shape ----------------------------------------------------------- */
+  --radius-large: 20px;   /* hero and large panels */
+  --radius-medium: 16px;  /* cards */
+  --radius-small: 10px;   /* buttons and fields */
+
   --container-width: min(1280px, calc(100% - 64px));
 }
+
 
 *{
   margin: 0;
@@ -129,11 +193,6 @@ video {
 
 
 
-.container {
-  position: relative;
-  width: min(100%, var(--container-width));
-}
-
 
 .home-text092 {
     font-size: 1.15rem;
@@ -148,12 +207,38 @@ video {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-background);
   text-align: left;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.brand,
+.section-header h2 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  letter-spacing: var(--tracking-card);
+  text-wrap: pretty;
+}
+
+h1 {
+  font-size: var(--text-section);
+  line-height: var(--leading-section);
+  letter-spacing: var(--tracking-hero);
+}
+
+h2 {
+  font-size: var(--text-panel);
+  line-height: var(--leading-section);
+  letter-spacing: var(--tracking-panel);
+}
+
+h3 {
+  font-size: var(--text-card);
+  line-height: 1.3;
 }
 
 header,
@@ -184,7 +269,7 @@ header,
 }
 
 .brand {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.5rem;
   color: var(--color-heading);
@@ -349,7 +434,7 @@ header,
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: rgba(76, 175, 80, 0.12);
+  background-color: rgba(44, 107, 48, 0.12);
   color: var(--color-primary);
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -361,7 +446,7 @@ header,
 
 .header-phone:hover,
 .header-phone:focus {
-  background-color: rgba(76, 175, 80, 0.24);
+  background-color: rgba(44, 107, 48, 0.24);
   color: var(--color-primary-dark);
 }
 
@@ -435,7 +520,7 @@ body.nav-open {
   align-items: center;
   overflow: hidden;
   z-index: 1;
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.08), rgba(26, 163, 156, 0.08));
+  background: linear-gradient(135deg, rgba(44, 107, 48, 0.08), rgba(44, 107, 48, 0.08));
 }
 
 .hero-media {
@@ -539,7 +624,7 @@ body.nav-open {
 .button-primary {
   background-color: var(--color-primary);
   color: #ffffff;
-  box-shadow: 0 12px 30px rgba(76, 175, 80, 0.24);
+  box-shadow: 0 12px 30px rgba(44, 107, 48, 0.24);
 }
 
 .button-primary:hover,
@@ -551,7 +636,7 @@ body.nav-open {
 .button-secondary {
   background-color: var(--color-background);
   color: var(--color-primary);
-  border: 1px solid rgba(76, 175, 80, 0.2);
+  border: 1px solid rgba(44, 107, 48, 0.2);
 }
 
 .button-secondary:hover,
@@ -723,7 +808,7 @@ body.nav-open {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background-color: rgba(76, 175, 80, 0.12);
+  background-color: rgba(44, 107, 48, 0.12);
   color: var(--color-primary);
   font-size: 1.1rem;
 }
@@ -846,7 +931,7 @@ body.nav-open {
 
 .finance {
   padding: 96px 0;
-  background: linear-gradient(120deg, rgba(76, 175, 80, 0.12), rgba(26, 163, 156, 0.1));
+  background: linear-gradient(120deg, rgba(44, 107, 48, 0.12), rgba(44, 107, 48, 0.1));
 }
 
 .finance-content {
@@ -1064,7 +1149,7 @@ body.nav-open {
 }
 
 .footer-brand a {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.5rem;
   color: #ffffff;
@@ -1207,7 +1292,7 @@ body.nav-open {
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     background-color: #ffffff;
     border-radius: var(--radius-medium);
-    box-shadow: 0 24px 45px rgba(15, 40, 25, 0.12);
+    box-shadow: 0 24px 45px rgba(34, 32, 29, 0.12);
     margin: 0;
   }
 
@@ -1402,7 +1487,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: var(--font-heading);
   color: var(--color-heading);
   font-weight: 600;
   line-height: 1.25;
@@ -4009,7 +4094,7 @@ container-offer{
 /* Secondary page layout */
 .page-hero {
   padding: 96px 0 72px;
-  background-color: #f7faf9;
+  background-color: var(--color-background-alt);
 }
 
 .page-hero__content {
@@ -4027,7 +4112,7 @@ container-offer{
   width: 100%;
   border-radius: var(--radius-large);
   object-fit: cover;
-  box-shadow: 0 24px 60px rgba(15, 40, 25, 0.18);
+  box-shadow: 0 24px 60px rgba(34, 32, 29, 0.18);
 }
 
 .page-section {
@@ -4039,7 +4124,7 @@ container-offer{
 }
 
 .page-section--dark {
-  background: linear-gradient(135deg, #0b2f1a 0%, #143f28 100%);
+  background: var(--color-dark);
   color: #ffffff;
 }
 
@@ -4057,14 +4142,14 @@ container-offer{
   display: inline-block;
   padding: 12px 28px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.92), rgba(38, 120, 100, 0.92));
+  background: linear-gradient(135deg, rgba(44, 107, 48, 0.92), rgba(30, 70, 32, 0.92));
   color: #ffffff;
   font-size: 1.75rem;
   box-shadow: 0 25px 60px rgba(17, 66, 38, 0.18);
 }
 
 .order-faqs {
-  background: rgba(76, 175, 80, 0.08);
+  background: rgba(44, 107, 48, 0.08);
 }
 
 .order-faq-list {
@@ -4074,7 +4159,7 @@ container-offer{
 
 .order-faq-item {
   padding: 0 0 16px;
-  border-bottom: 1px solid rgba(15, 40, 25, 0.1);
+  border-bottom: 1px solid rgba(34, 32, 29, 0.1);
 }
 
 .order-faq-item:last-child {
@@ -4105,18 +4190,18 @@ container-offer{
 }
 
 .order-faq-toggle:is(:hover, :focus-visible) {
-  background: #ffffff;
-  border-color: rgba(76, 175, 80, 0.4);
+  background: var(--color-surface);
+  border-color: rgba(44, 107, 48, 0.4);
   outline: none;
 }
 
 .order-faq-toggle:focus-visible {
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.25);
+  box-shadow: 0 0 0 3px rgba(44, 107, 48, 0.25);
 }
 
 .order-faq-toggle.is-open {
-  background: #ffffff;
-  border-color: rgba(76, 175, 80, 0.7);
+  background: var(--color-surface);
+  border-color: rgba(44, 107, 48, 0.7);
   color: var(--color-primary);
 }
 
@@ -4246,10 +4331,10 @@ container-offer{
 .requirements-card,
 .result-card,
 .contact-card {
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   border-radius: var(--radius-medium);
   padding: 28px;
-  box-shadow: 0 16px 40px rgba(15, 40, 25, 0.08);
+  box-shadow: 0 16px 40px rgba(34, 32, 29, 0.08);
 }
 
 .card-link {
@@ -4277,7 +4362,7 @@ container-offer{
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background-color: rgba(76, 175, 80, 0.12);
+  background-color: rgba(44, 107, 48, 0.12);
   color: var(--color-primary);
   margin-bottom: 14px;
 }
@@ -4287,10 +4372,10 @@ container-offer{
 }
 
 .gallery-card {
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   border-radius: var(--radius-medium);
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(15, 40, 25, 0.12);
+  box-shadow: 0 20px 50px rgba(34, 32, 29, 0.12);
 }
 
 .gallery-card img {
@@ -4309,7 +4394,7 @@ container-offer{
 .finance-table-wrapper {
   overflow-x: auto;
   border-radius: var(--radius-medium);
-  box-shadow: 0 24px 50px rgba(15, 40, 25, 0.12);
+  box-shadow: 0 24px 50px rgba(34, 32, 29, 0.12);
 }
 
 .spec-table,
@@ -4317,7 +4402,7 @@ container-offer{
 .finance-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #ffffff;
+  background-color: var(--color-surface);
 }
 
 .spec-table th,
@@ -4333,7 +4418,7 @@ container-offer{
 
 .compare-table thead,
 .finance-table thead {
-  background-color: rgba(76, 175, 80, 0.12);
+  background-color: rgba(44, 107, 48, 0.12);
 }
 
 .finance-controls {
@@ -4360,7 +4445,7 @@ container-offer{
   background: rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-large);
   padding: 32px;
-  box-shadow: 0 40px 90px rgba(15, 40, 25, 0.12);
+  box-shadow: 0 40px 90px rgba(34, 32, 29, 0.12);
   display: grid;
   gap: 28px;
 }
@@ -4379,7 +4464,7 @@ container-offer{
   grid-template-columns: repeat(2, auto);
   padding: 4px;
   border-radius: 999px;
-  background: rgba(76, 175, 80, 0.12);
+  background: rgba(44, 107, 48, 0.12);
   gap: 4px;
   align-items: center;
 }
@@ -4408,8 +4493,8 @@ container-offer{
   width: calc(50% - 4px);
   height: calc(100% - 8px);
   border-radius: 999px;
-  background: #ffffff;
-  box-shadow: 0 8px 20px rgba(15, 40, 25, 0.12);
+  background: var(--color-surface);
+  box-shadow: 0 8px 20px rgba(34, 32, 29, 0.12);
   transition: transform 0.25s ease;
 }
 
@@ -4449,7 +4534,7 @@ container-offer{
 
 
 .finance-plans-card table tr[data-highlight="true"] {
-  background: rgba(76, 175, 80, 0.1);
+  background: rgba(44, 107, 48, 0.1);
 }
 
 .finance-plans-card table tr[data-highlight="true"] th,
@@ -4462,7 +4547,7 @@ container-offer{
 }
 
 .finance-plans-card table tr:hover {
-  background: rgba(76, 175, 80, 0.08);
+  background: rgba(44, 107, 48, 0.08);
 }
 
 
@@ -4475,7 +4560,7 @@ container-offer{
 }
 
 .order-step {
-  background-color: rgba(76, 175, 80, 0.1);
+  background-color: rgba(44, 107, 48, 0.1);
   border: none;
   border-radius: 999px;
   padding: 10px 18px;
@@ -4490,10 +4575,10 @@ container-offer{
 }
 
 .order-step-panel {
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   border-radius: var(--radius-medium);
   padding: 32px;
-  box-shadow: 0 24px 45px rgba(15, 40, 25, 0.12);
+  box-shadow: 0 24px 45px rgba(34, 32, 29, 0.12);
 }
 
 .order-step-panel.is-active {
@@ -4577,10 +4662,10 @@ container-offer{
 
 .faq-snippets details,
 .faq-accordion details {
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   padding: 18px 22px;
   border-radius: var(--radius-medium);
-  box-shadow: 0 16px 36px rgba(15, 40, 25, 0.08);
+  box-shadow: 0 16px 36px rgba(34, 32, 29, 0.08);
 }
 
 .faq-snippets details + details,
@@ -4609,7 +4694,7 @@ container-offer{
 }
 
 .timeline {
-  border-left: 3px solid rgba(76, 175, 80, 0.4);
+  border-left: 3px solid rgba(44, 107, 48, 0.4);
   padding-left: 24px;
   display: grid;
   gap: 24px;
@@ -4654,7 +4739,7 @@ container-offer{
   height: 320px;
   border: none;
   border-radius: var(--radius-medium);
-  box-shadow: 0 18px 45px rgba(15, 40, 25, 0.12);
+  box-shadow: 0 18px 45px rgba(34, 32, 29, 0.12);
 }
 
 .search-tool {
@@ -4688,10 +4773,10 @@ container-offer{
 }
 
 .calculator-form {
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   border-radius: var(--radius-medium);
   padding: 32px;
-  box-shadow: 0 24px 50px rgba(15, 40, 25, 0.12);
+  box-shadow: 0 24px 50px rgba(34, 32, 29, 0.12);
   display: grid;
   gap: 18px;
 }
@@ -4716,7 +4801,7 @@ container-offer{
 }
 
 .page-hero--order {
-  background-color: rgba(76, 175, 80, 0.12);
+  background-color: rgba(44, 107, 48, 0.12);
   padding: 64px 0 48px;
 }
 
@@ -4835,7 +4920,7 @@ container-offer{
 
   .finance-plans-card {
     padding: 24px;
-    box-shadow: 0 24px 50px rgba(15, 40, 25, 0.1);
+    box-shadow: 0 24px 50px rgba(34, 32, 29, 0.1);
   }
 
   .finance-toggle {
@@ -4868,10 +4953,10 @@ container-offer{
   .finance-table tr {
     display: grid;
     gap: 12px;
-    background: #ffffff;
+    background: var(--color-surface);
     border-radius: var(--radius-medium);
     padding: 16px;
-    box-shadow: 0 18px 36px rgba(15, 40, 25, 0.12);
+    box-shadow: 0 18px 36px rgba(34, 32, 29, 0.12);
   }
 
   .finance-table td,
@@ -4963,7 +5048,7 @@ container-offer{
 }
 
 .finance-summary--bullets li {
-  background: rgba(76, 175, 80, 0.12);
+  background: rgba(44, 107, 48, 0.12);
   color: var(--color-heading);
   padding: 10px 18px;
   border-radius: 999px;
@@ -4984,3 +5069,217 @@ container-offer{
 /* Provenance line under the TM7 specification table. Every published figure
    carries its source and the date it was checked. */
 .spec-source { font-size: 0.85rem; opacity: 0.75; margin-top: 12px; }
+
+/* =====================================================================
+   Canon components
+   Added 2026-09-01 with the Canon design direction. These are the
+   pieces the artboards need that the stylesheet did not already have.
+   Source: thermobella-docs/design/artboards/Canon.dc.html and CanonMore.dc.html
+   ===================================================================== */
+
+/* Pill / chip. Canon uses these for credentials under a headline. */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-2xs);
+  padding: 0;
+  list-style: none;
+}
+
+.pill {
+  display: inline-block;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  padding: var(--space-xs) 18px;
+  border-radius: 999px;
+  font-size: var(--text-pill);
+  font-weight: 600;
+}
+
+/* Tinted panel, for a spec block or an aside sitting on the ground. */
+.tint-panel {
+  background: var(--color-background-alt);
+  border-radius: var(--radius-large);
+  padding: var(--space-lg) var(--card-padding);
+}
+
+/* Spec row: label left, value right, hairline between. */
+.spec-list {
+  margin: 0;
+  font-size: var(--text-body-sm);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-2xs) 0;
+  border-bottom: 1px solid var(--color-tint-border);
+}
+
+.spec-row:last-child {
+  border-bottom: 0;
+}
+
+.spec-row dt {
+  color: var(--color-text-faint);
+}
+
+.spec-row dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.spec-source {
+  font-size: var(--text-caption);
+  color: var(--color-text-faint);
+  margin-top: var(--space-sm);
+}
+
+/* Dark call-to-action panel, inset from the page gutter. */
+.cta-panel {
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+  border-radius: var(--radius-large);
+  padding: 52px var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 44px;
+  flex-wrap: wrap;
+}
+
+.cta-panel h2 {
+  color: var(--color-on-dark);
+  font-size: var(--text-panel);
+  letter-spacing: var(--tracking-panel);
+  margin: 0 0 var(--space-xs);
+}
+
+.cta-panel p {
+  color: var(--color-on-dark-muted);
+  max-width: 38em;
+  margin: 0;
+}
+
+/* Plan card: image AND title AND body AND call to action.
+   .info-card has no image slot and .gallery-card has no title, so neither
+   could carry a meal plan on its own. */
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(34, 32, 29, 0.08);
+}
+
+.plan-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.plan-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--card-padding);
+  flex: 1 1 auto;
+}
+
+.plan-card__body h3 {
+  margin: 0;
+  font-size: var(--text-card);
+  letter-spacing: var(--tracking-card);
+}
+
+.plan-card__body p {
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+.plan-card .card-link {
+  margin-top: auto;
+}
+
+/* An ordered plan: each day or meal, with a linked dish and a reason. */
+.plan-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.plan-step {
+  background: var(--color-surface);
+  border-radius: var(--radius-medium);
+  padding: var(--space-md) 28px;
+  box-shadow: 0 16px 40px rgba(34, 32, 29, 0.06);
+}
+
+.plan-step__label {
+  display: block;
+  font-size: var(--text-caption);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-2xs);
+}
+
+.plan-step h3 {
+  margin: 0 0 var(--space-2xs);
+  font-size: var(--text-card);
+  letter-spacing: var(--tracking-card);
+}
+
+.plan-step p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-body);
+}
+
+/* A short declarative answer block, for people and for answer engines. */
+.quick-answers {
+  background: var(--color-surface);
+  border-radius: var(--radius-large);
+  padding: var(--space-lg) var(--card-padding);
+  box-shadow: 0 16px 40px rgba(34, 32, 29, 0.08);
+}
+
+.quick-answers dl {
+  margin: 0;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.quick-answers dt {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-card);
+  letter-spacing: var(--tracking-card);
+  margin-bottom: var(--space-2xs);
+}
+
+.quick-answers dd {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: var(--leading-prose);
+}
+
+@media (max-width: 640px) {
+  .cta-panel {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .plan-card img {
+    height: 200px;
+  }
+}
