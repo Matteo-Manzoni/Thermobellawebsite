@@ -17,4 +17,30 @@ Allow: /
 User-agent: Pinterestbot
 Allow: /
 
+# Explicitly allow the AI crawlers that feed answer engines. The wildcard above
+# already permits them; this states it so the intent is not ambiguous.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://thermomixbella.com/sitemap.xml

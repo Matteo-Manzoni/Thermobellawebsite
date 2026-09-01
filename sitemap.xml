@@ -2,43 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://thermomixbella.com/</loc>
+    <lastmod>2026-09-01</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://thermomixbella.com/tm7/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/order/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/order-your-tm7/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/demo/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/advisor/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/about/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/contact/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/thermomix/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/faq/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/compare/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/recipes/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
   <url>
     <loc>https://thermomixbella.com/calculator/</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
-  <url><loc>https://thermomixbella.com/privacy/</loc></url>
+  <url><loc>https://thermomixbella.com/privacy/</loc>
+    <lastmod>2026-09-01</lastmod></url>
+  <url>
+    <loc>https://thermomixbella.com/meal-plans/</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://thermomixbella.com/meal-plans/first-week/</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://thermomixbella.com/meal-plans/family-weeknights/</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
 </urlset>
