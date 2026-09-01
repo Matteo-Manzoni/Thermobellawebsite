@@ -6,9 +6,65 @@
   <title>Privacy Notice | Thermomixbella</title>
   <meta name="description" content="How Thermomixbella collects, uses and stores the personal information you provide when you enquire about a Thermomix demo.">
   <link rel="canonical" href="https://thermomixbella.com/privacy/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/styles/style.css">
+  <script src="https://kit.fontawesome.com/f4d2f86d5b.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Thermomixbella">
+  <meta property="og:title" content="Privacy Notice | Thermomixbella">
+  <meta property="og:description" content="How Thermomixbella collects, uses and stores the personal information you provide when you enquire about a Thermomix demo.">
+  <meta property="og:url" content="https://thermomixbella.com/privacy/">
+  <meta property="og:image" content="https://thermomixbella.com/static/images/thermomixbella-share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Notice | Thermomixbella">
+  <meta name="twitter:description" content="How Thermomixbella collects, uses and stores the personal information you provide when you enquire about a Thermomix demo.">
+  <meta name="twitter:image" content="https://thermomixbella.com/static/images/thermomixbella-share.png">
 </head>
-<body>
+<body id="top">
+  <header class="site-header" data-sticky>
+    <div class="container header-container">
+      <a class="brand" href="/">Thermomixbella</a>
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/tm7/">TM7</a></li>
+          <li><a href="/order/">Request a Demo</a></li>
+          <li><a href="/demo/">Book a Demo</a></li>
+          <li><a href="/advisor/">Become an Advisor</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li class="nav-more">
+            <button class="nav-more-toggle" type="button" aria-haspopup="true" aria-expanded="false">More <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+            <div class="nav-more-menu" role="menu">
+              <a role="menuitem" href="/thermomix/">What is a Thermomix?</a>
+              <a role="menuitem" href="/faq/">FAQ</a>
+              <a role="menuitem" href="/compare/">TM6 vs TM7</a>
+              <a role="menuitem" href="/meal-plans/">Meal plans</a>
+              <a role="menuitem" href="/recipes/">Recipes</a>
+              <a role="menuitem" href="/calculator/">Demo Planner</a>
+            </div>
+          </li>
+        </ul>
+        <div class="nav-mobile-footer">
+          <a class="nav-mobile-phone" href="tel:+447391585516"><i class="fas fa-phone"></i> 07391 585516</a>
+          <a class="button button-primary nav-mobile-order" href="/order/">Request a Demo</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a class="button button-primary header-order" href="/order/">Request a Demo</a>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
   <main>
     <section class="page-hero">
       <div class="container">
@@ -74,5 +130,57 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#top">Thermomixbella</a>
+        <p>Independent Thermomix&reg; advisor in Twickenham. In-home demos across South West London, online across the UK and Ireland.</p>
+        <div class="footer-cta">
+          <a class="button button-primary" href="/order/">Request a Demo</a>
+          <a class="button button-secondary" href="/demo/">Book a Demo</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/bellathermomixbimby/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/groups/402052367406983/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <a href="/#features">Features</a>
+        <a href="/order/#demo-request">Demo Journey</a>
+        <a href="/demo/">Book a Demo</a>
+        <a href="/order/">Request a Demo Call</a>
+      </div>
+      <div class="footer-links">
+        <h3>Support</h3>
+        <a href="/thermomix/">What is a Thermomix?</a>
+        <a href="/about/">About Isabella</a>
+        <a href="/advisor/">Become an Advisor</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <div class="footer-newsletter">
+        <h3>Stay in the Loop</h3>
+        <p>Get seasonal recipes, TM7 tips, and demo invites straight to your inbox.</p>
+        <form action="https://formspree.io/f/xanpwand" method="POST" class="newsletter-form">
+          <input type="hidden" name="_source" value="/privacy/">
+          <input type="hidden" name="subject" value="Thermomixbella newsletter from /privacy/">
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" type="email" name="email" placeholder="you@example.com" required>
+          <button type="submit" class="button button-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2025 Thermomixbella. All rights reserved.</p>
+      <div class="footer-policies">
+        <a href="/privacy/">Privacy Policy</a>
+        
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/scripts/script.js"></script>
 </body>
 </html>
