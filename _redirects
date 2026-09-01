@@ -25,8 +25,8 @@
 /templates2/calculator              /calculator/        301!
 /templates2/contact.html            /contact/           301!
 /templates2/contact                 /contact/           301!
-/templates2/order-your-tm7.html     /order-your-tm7/    301!
-/templates2/order-your-tm7          /order-your-tm7/    301!
+/templates2/order-your-tm7.html     /order/             301!
+/templates2/order-your-tm7          /order/             301!
 /templates2/tm7.html                /tm7/               301!
 /templates2/tm7                     /tm7/               301!
 /templates2/order-experiments.html  /order/             301!
