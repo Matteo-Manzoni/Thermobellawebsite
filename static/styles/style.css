@@ -5040,10 +5040,14 @@ container-offer{
 .canon-hero__scrim {
   position: absolute;
   inset: 0;
+  /* Held dark under the copy, then cleared quickly so the photograph is actually
+     visible. The previous curve was still at 62% opacity across the middle, which
+     turned any image with a pale right-hand side into a grey panel. */
   background: linear-gradient(90deg,
-              rgba(20, 18, 16, 0.86) 0%,
-              rgba(20, 18, 16, 0.62) 42%,
-              rgba(20, 18, 16, 0.10) 100%);
+              rgba(20, 18, 16, 0.88) 0%,
+              rgba(20, 18, 16, 0.80) 28%,
+              rgba(20, 18, 16, 0.34) 55%,
+              rgba(20, 18, 16, 0.00) 78%);
 }
 
 .canon-hero__copy {
