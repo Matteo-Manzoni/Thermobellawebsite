@@ -5014,3 +5014,225 @@ container-offer{
   color: var(--color-text);
   font-weight: 600;
 }
+
+/* =====================================================================
+   Canon homepage layout, 2026-09-01
+   The artboard's actual structure, not just its palette: a photograph-led
+   hero with the headline inside it, reassurance cards, a two-column
+   "choose the person" block, and her own food photographs.
+   ===================================================================== */
+
+.canon-hero {
+  padding: var(--space-lg) 0 0;
+}
+
+.canon-hero__frame {
+  position: relative;
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.canon-hero__frame img {
+  width: 100%;
+  height: clamp(380px, 46vw, 520px);
+  object-fit: cover;
+  display: block;
+}
+
+.canon-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+              rgba(20, 18, 16, 0.86) 0%,
+              rgba(20, 18, 16, 0.62) 42%,
+              rgba(20, 18, 16, 0.10) 100%);
+}
+
+.canon-hero__copy {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0 clamp(24px, 4vw, 56px);
+  max-width: 56%;
+}
+
+.canon-hero__copy h1 {
+  color: var(--color-on-dark);
+  margin: 0;
+  max-width: 15ch;
+}
+
+.canon-hero__lead {
+  color: #ece8e2;
+  font-size: var(--text-lead);
+  line-height: var(--leading-body);
+  max-width: 42ch;
+  margin: 0;
+}
+
+.canon-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-2xs);
+}
+
+.canon-hero__phone {
+  color: var(--color-on-dark);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.canon-hero__phone:hover {
+  color: var(--color-on-dark);
+  text-decoration: underline;
+}
+
+/* Cards lift slightly and carry a hairline of the action colour, which is what
+   stops the three-card row reading as flat boxes. */
+.info-card--ruled {
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.info-card--ruled::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: var(--radius-medium) var(--radius-medium) 0 0;
+}
+
+.info-card--ruled:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-raised);
+}
+
+.canon-reassure {
+  padding-top: var(--space-xl);
+}
+
+.split-section--wide {
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.split-section--wide .split-section__media img {
+  border-radius: var(--radius-large);
+  object-fit: cover;
+  width: 100%;
+  max-height: 460px;
+}
+
+/* Her own food photography, given room rather than shrunk into a card. */
+.food-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.food-strip__item {
+  margin: 0;
+}
+
+.food-strip__item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-soft);
+}
+
+.food-strip__item figcaption {
+  margin-top: var(--space-xs);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-body);
+}
+
+/* Numbered steps. The number is the ornament; nothing else needs to be. */
+.step-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.step {
+  position: relative;
+  padding-top: var(--space-sm);
+  border-top: 2px solid var(--color-tint-border);
+}
+
+.step__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--text-panel);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2xs);
+}
+
+.step h3 {
+  margin: 0 0 var(--space-2xs);
+}
+
+.step p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: var(--leading-body);
+}
+
+@media (max-width: 992px) {
+  .canon-hero__copy {
+    max-width: 100%;
+    background: linear-gradient(0deg, rgba(20, 18, 16, 0.82), rgba(20, 18, 16, 0.55));
+  }
+
+  .canon-hero__scrim {
+    display: none;
+  }
+
+  .food-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .step-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .canon-hero__frame img {
+    height: 460px;
+  }
+
+  .food-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .food-strip__item img {
+    height: 260px;
+  }
+}
+
+/* Canon homepage polish */
+.canon-hero .eyebrow--light {
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: var(--space-2xs);
+}
+
+.split-section__content .pill-row {
+  margin-bottom: var(--space-md);
+}
+
+.food-strip + .container {
+  margin-top: var(--space-lg);
+}

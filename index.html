@@ -273,34 +273,107 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media">
-        <img width="1280" height="960" class="hero-media-image" src="/static/images/Thermomix20.jpeg" alt="Thermomix TM7 styled on a kitchen counter" fetchpriority="high" decoding="async">
-        <video class="hero-video" autoplay muted loop playsinline poster="/static/images/Thermomix20.jpeg">
-          <source src="/static/media/thermomix-hero.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="hero-overlay"></div>
-      </div>
-      <div class="container hero-content">
-        <div class="hero-panel hero-panel--transparent">
-          <p class="eyebrow eyebrow--light">Thermomix&reg; TM7 Advisor | London</p>
-          <h1 id="hero-title">Try a Thermomix in your own kitchen, free</h1>
-          <p class="hero-subtitle">One machine that weighs, chops, cooks, steams, kneads and blends, with over 100,000 Cookidoo&reg; recipes guiding you through each step on the screen.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="/order/">Request a Demo</a>
-            <a class="button button-secondary button-secondary--inverse" href="/demo/">Book a Demo</a>
+    <section class="canon-hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="canon-hero__frame">
+          <img width="900" height="675" src="/static/images/tm7-kitchen-hero.jpg"
+               alt="A Thermomix TM7 on a kitchen worktop beside a board of prepared vegetables"
+               fetchpriority="high" decoding="async">
+          <div class="canon-hero__scrim"></div>
+          <div class="canon-hero__copy">
+            <p class="eyebrow eyebrow--light">Thermomix&reg; TM7 Advisor &middot; Twickenham</p>
+            <h1 id="hero-title">Try a Thermomix in your own kitchen, free</h1>
+            <p class="canon-hero__lead">I bring the TM7 to you, we cook a proper meal together, and
+              you eat it. Around two hours, no obligation, nothing to buy.</p>
+            <div class="canon-hero__actions">
+              <a class="button button-primary" href="/order/">Book a free demo</a>
+              <a class="canon-hero__phone" href="tel:+447391585516">or call 07391 585516</a>
+            </div>
           </div>
-          <ul class="hero-highlights">
-            <li><i class="fas fa-check"></i> Guided cooking from prep to plating</li>
-            <li><i class="fas fa-check"></i> 10" touchscreen with open cooking mode</li>
-            <li><i class="fas fa-check"></i> Advisor support from enquiry to everyday use</li>
-          </ul>
         </div>
       </div>
     </section>
 
-    <section class="page-section" aria-labelledby="home-quick">
+    <section class="page-section canon-reassure" aria-label="Why book a demo">
+      <div class="container card-grid card-grid--three">
+        <article class="info-card info-card--ruled">
+          <div class="icon-circle"><i class="fas fa-utensils" aria-hidden="true"></i></div>
+          <h3>Cooked, not pitched</h3>
+          <p>We make a real meal around what you actually eat, and you run the machine yourself
+            rather than watching me do it.</p>
+        </article>
+        <article class="info-card info-card--ruled">
+          <div class="icon-circle"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+          <h3>Across South West London</h3>
+          <p>Twickenham, Richmond, Teddington, Hampton, Kingston, Chiswick and nearby. Online demos
+            anywhere in the UK and Ireland.</p>
+        </article>
+        <article class="info-card info-card--ruled">
+          <div class="icon-circle"><i class="fas fa-heart" aria-hidden="true"></i></div>
+          <h3>Still there afterwards</h3>
+          <p>Advisor since 2016. Cook-alongs, recipes and someone to call when a dish misbehaves
+            months later.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="choose-title">
+      <div class="container split-section split-section--wide">
+        <div class="split-section__content">
+          <h2 id="choose-title">Every advisor charges the same. So choose the person.</h2>
+          <p>Vorwerk set the price and permit no discounting, so a TM7 costs what it costs wherever
+            you buy it. What actually differs is who teaches you to use it, and who is still
+            answering the phone in six months.</p>
+          <ul class="pill-row">
+            <li class="pill">Advisor since 2016</li>
+            <li class="pill">Diamond Team Leader 2022</li>
+            <li class="pill">Consistency Award 2025</li>
+            <li class="pill">Thousands of cooks</li>
+          </ul>
+          <p><a href="/about/">More about Isabella</a>, or see
+            <a href="/tm7/#price">what a TM7 costs</a>.</p>
+        </div>
+        <div class="split-section__media">
+          <img width="768" height="1024" src="/static/images/MUM2.jpeg"
+               alt="Isabella Spreafico beside a Thermomix in a kitchen" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="cooked-title">
+      <div class="container section-header">
+        <p class="eyebrow">From her own kitchen</p>
+        <h2 id="cooked-title">The sort of thing we actually cook</h2>
+        <p>Every photograph here is Isabella's, not a catalogue.</p>
+      </div>
+      <div class="container food-strip">
+        <figure class="food-strip__item">
+          <img width="768" height="1024" src="/static/images/recipe.jpeg"
+               alt="Two bowls of green soup topped with halved cherry tomatoes and basil" loading="lazy">
+          <figcaption>Soup, cooked and blended in the same bowl</figcaption>
+        </figure>
+        <figure class="food-strip__item">
+          <img width="1024" height="768" src="/static/images/recipe1.jpeg"
+               alt="Two loaves of bread on a wooden board" loading="lazy">
+          <figcaption>Bread, from a dough the machine kneads</figcaption>
+        </figure>
+        <figure class="food-strip__item">
+          <img width="815" height="821" src="/static/images/recipe4.jpeg"
+               alt="A grain salad with pomegranate seeds and fresh herbs" loading="lazy">
+          <figcaption>Everything chopped in the bowl, nothing by hand</figcaption>
+        </figure>
+        <figure class="food-strip__item">
+          <img width="768" height="1024" src="/static/images/recipe5.jpeg"
+               alt="A pavlova wreath scattered with pomegranate seeds" loading="lazy">
+          <figcaption>And the showing-off one</figcaption>
+        </figure>
+      </div>
+      <div class="container" style="text-align:center">
+        <a class="button button-secondary" href="/meal-plans/">See the meal plans</a>
+      </div>
+    </section>
+
+    <section class="page-section page-section--alt" aria-labelledby="home-quick">
       <div class="container section-header">
         <h2 id="home-quick">Who, where, what it costs</h2>
       </div>
@@ -312,110 +385,42 @@
             for 70+ sales in a year.</dd>
           <dt>Where do you cover?</dt>
           <dd>In person across South West London: Twickenham, Richmond, Teddington, Hampton,
-            Kingston, Chiswick and <a href="/contact/">21 more</a>. Online demos reach
-            anywhere in the UK and Ireland.</dd>
+            Kingston, Chiswick and <a href="/contact/">21 more</a>. Online demos reach anywhere
+            in the UK and Ireland.</dd>
           <dt>What is a demo?</dt>
-          <dd>You cook a real meal with the machine in your own kitchen, around what you
-            already eat, and then you eat it. Around two hours.
+          <dd>You cook a real meal with the machine in your own kitchen, around what you already
+            eat, and then you eat it. Around two hours.
             <a href="/demo/">The formats and lengths are here</a>.</dd>
           <dt>What does it cost?</dt>
-          <dd>The demo is free and nobody is asked to decide on the day. Vorwerk set the price
-            of the machine and permit no discounting, so a TM7 costs the same from every
-            advisor in the country; the figures are on the <a href="/tm7/#price">TM7 page</a>. More of these in the <a href="/faq/">full FAQ</a>.</dd>
+          <dd>The demo is free and nobody is asked to decide on the day. Vorwerk set the price of
+            the machine and permit no discounting, so a TM7 costs the same from every advisor in
+            the country; the figures are on the <a href="/tm7/#price">TM7 page</a>. More of these
+            in the <a href="/faq/">full FAQ</a>.</dd>
         </dl>
       </div>
     </section>
 
-    <section class="feature-strip" id="features" aria-label="Thermomix TM7 key highlights">
-      <div class="container feature-strip-grid">
-        <article class="feature-strip-card">
-          <i class="fas fa-utensils"></i>
-          <h3>23+ Modes</h3>
-          <p>Over 20 kitchen functions in one bowl, including chopping, kneading, milling and sous-vide.</p>
-          <a href="/tm7/#guided-cooking" class="feature-link">Learn more</a>
-        </article>
-        <article class="feature-strip-card">
-          <i class="fas fa-wifi"></i>
-          <h3>Integrated Wi-Fi</h3>
-          <p>Sync Cookidoo&reg; favourites, shopping lists, and updates directly to your TM7.</p>
-          <a href="/tm7/#engineering-title" class="feature-link">Learn more</a>
-        </article>
-        <article class="feature-strip-card">
-          <i class="fas fa-volume-down"></i>
-          <h3>Silent Motor</h3>
-          <p>A quieter motor across the full speed range, with sensors keeping every dish consistent.</p>
-          <a href="/tm7/#engineering-title" class="feature-link">Learn more</a>
-        </article>
-        <article class="feature-strip-card">
-          <i class="fas fa-leaf"></i>
-          <h3>Healthier Routines</h3>
-          <p>Plan balanced meals, batch cook, and reduce food waste with guided inspiration.</p>
-          <a href="/tm7/#accessories-title" class="feature-link">Learn more</a>
-        </article>
+    <section class="page-section" aria-labelledby="how-title">
+      <div class="container section-header">
+        <h2 id="how-title">How does a demo actually work?</h2>
       </div>
-    </section>
-
-    <section class="benefits" id="benefits">
-      <div class="container benefits-content">
-        <div class="benefit-block">
-          <div class="benefit-copy">
-            <h2><span class="benefit-icon"><i class="fas fa-clock"></i></span>Cook More, Stress Less</h2>
-            <p>Over 20 kitchen functions in one TM7. From weeknight dinners to show-stopping desserts, guided recipes make every step effortless.</p>
-          </div>
-          <div class="benefit-image-wrapper">
-            <img width="3840" height="2161" src="/static/TM7_images/Thermomix_TM7-Lifestyle_Photo_TM7InYourKitchen_72.webp" alt="Thermomix TM7 preparing dinner on a modern countertop" loading="lazy">
-          </div>
-        </div>
-        <div class="benefit-block">
-          <div class="benefit-image-wrapper">
-            <img width="1200" height="800" src="/static/TM7_images/int_master-en_thermomix_tm7-launch_Functionality_Photos_Lifestyle_0351_4x3_3x2.jpeg" alt="Plated Thermomix TM7 meal with fresh ingredients" loading="lazy">
-          </div>
-          <div class="benefit-copy">
-            <h2><span class="benefit-icon"><i class="fas fa-utensils"></i></span>Healthy, Restaurant-Quality Meals</h2>
-            <p>Control every ingredient while exploring nutrition-forward recipes curated by chefs and dietitians. Sous-vide, ferment, and slow cook like a pro.</p>
-          </div>
-        </div>
-        <div class="benefit-block">
-          <div class="benefit-copy">
-            <h2><span class="benefit-icon"><i class="fas fa-user-friends"></i></span>Your Advisor in Your Kitchen</h2>
-            <p>Isabella guides you from your first demo to ongoing mastery. Join live cook-alongs, ask questions anytime, and unlock exclusive Thermomixbella community perks.</p>
-          </div>
-          <div class="benefit-image-wrapper">
-            <img width="768" height="1024" class="benefit-image benefit-image--focus-bottom" src="/static/images/MUM2.jpeg" alt="Thermomix advisor hosting a cooking session" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark-highlight" id="support" aria-labelledby="support-title">
-      <div class="container dark-highlight-content">
-        <div>
-          <p class="eyebrow eyebrow--light">Why Thermomixbella</p>
-          <h2 id="support-title">Personal demos, lifelong support</h2>
-          <p class="dark-highlight-copy">Explore the TM7 in a relaxed demo, then stay connected with coaching, recipes, and troubleshooting whenever you need it.</p>
-          <ul class="dark-highlight-list">
-            <li><i class="fas fa-shield-alt"></i> Official Thermomix&reg; Advisor | Advisor ID 140781</li>
-            <li><i class="fas fa-calendar-check"></i> Flexible in-person or virtual demos at a time that suits you</li>
-          </ul>
-          <div class="dark-highlight-actions">
-            <a class="button button-primary" href="/order/">Request a Demo Call</a>
-            <a class="button button-outline" href="/demo/">See Demo Formats</a>
-          </div>
-        </div>
-        <div class="trust-badges" role="list">
-          <div class="trust-badge" role="listitem">
-            <i class="fas fa-award"></i>
-            <span>Official Thermomix Advisor</span>
-          </div>
-          <div class="trust-badge" role="listitem">
-            <i class="fas fa-user-check"></i>
-            <span>Diamond Team Leader</span>
-          </div>
-          <div class="trust-badge" role="listitem">
-            <i class="fas fa-heart"></i>
-            <span>Support beyond delivery</span>
-          </div>
-        </div>
+      <div class="container step-row">
+        <article class="step">
+          <span class="step__num">1</span>
+          <h3>You tell me what you like cooking</h3>
+          <p>A sentence is enough. The menu is built around that rather than around a script.</p>
+        </article>
+        <article class="step">
+          <span class="step__num">2</span>
+          <h3>We cook it in your kitchen</h3>
+          <p>You run the machine. Bring whoever you like; most people make an evening of it.</p>
+        </article>
+        <article class="step">
+          <span class="step__num">3</span>
+          <h3>You eat, and then you decide</h3>
+          <p>Or you decide nothing at all. Plenty of people book, enjoy the meal and say no, which
+            is a perfectly good outcome.</p>
+        </article>
       </div>
     </section>
 
@@ -514,8 +519,8 @@
       </div>
       <div class="footer-links">
         <h3>Explore</h3>
-        <a href="#features">Features</a>
-        <a href="#support">Demo Journey</a>
+        <a href="/tm7/">TM7 features</a>
+        <a href="/demo/">How a demo works</a>
         <a href="/demo/">Book a Demo</a>
         <a href="/order/">Request a Demo Call</a>
       </div>
