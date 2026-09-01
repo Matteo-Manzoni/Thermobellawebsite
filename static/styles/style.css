@@ -5331,3 +5331,160 @@ container-offer{
     gap: 20px;
   }
 }
+
+/* =====================================================================
+   Craft floor, 2026-09-01
+   Measured defects, not preferences: prose was running 153 characters wide,
+   and every browser-owned surface still carried its default.
+   ===================================================================== */
+
+/* Measure. 153ch is unreadable; the floor is 65-75. */
+.quick-answers dd,
+.quick-answers dt,
+.plan-step p,
+.spec-source,
+.section-header > p {
+  max-width: 68ch;
+}
+
+.quick-answers dl {
+  gap: var(--space-lg);
+}
+
+/* Browser surfaces. These ship with defaults that belong to no design system,
+   and theming them is the cheapest signal that a page was built rather than
+   assembled. */
+::selection {
+  background: var(--color-primary-tint);
+  color: var(--color-heading);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  caret-color: var(--color-primary);
+  accent-color: var(--color-primary);
+}
+
+/* Figures in the spec tables are data: line them up. */
+.spec-table td,
+.spec-table th {
+  font-variant-numeric: tabular-nums;
+}
+
+* {
+  scrollbar-color: var(--color-tint-border) transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tint-border);
+  border-radius: 999px;
+  border: 3px solid var(--color-background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-faint);
+}
+
+/* One authored moment: the hero copy settles in, from an already-visible
+   default so nothing is hidden if the animation never runs. */
+@media (prefers-reduced-motion: no-preference) {
+  .canon-hero__copy > * {
+    animation: hero-settle 620ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+
+  .canon-hero__copy > *:nth-child(1) { animation-delay: 40ms; }
+  .canon-hero__copy > *:nth-child(2) { animation-delay: 110ms; }
+  .canon-hero__copy > *:nth-child(3) { animation-delay: 180ms; }
+  .canon-hero__copy > *:nth-child(4) { animation-delay: 250ms; }
+}
+
+@keyframes hero-settle {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* A dated record, not a card grid.
+   The craft floor is right that same-size icon-plus-heading-plus-text cards are the
+   lazy container, and these are certificates with years on them: a ledger says what
+   they are far better than three boxes did. */
+.award-ledger {
+  list-style: none;
+  margin: 0 auto;   /* the section header above it is centred; match it */
+  padding: 0;
+  border-top: 1px solid var(--color-tint-border);
+  max-width: 78ch;
+}
+
+.award-ledger__row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-tint-border);
+  align-items: baseline;
+}
+
+.award-ledger__year {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-sub);
+  letter-spacing: var(--tracking-card);
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.award-ledger__body h3 {
+  margin: 0 0 var(--space-2xs);
+  font-size: var(--text-card);
+}
+
+.award-ledger__body p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: var(--leading-body);
+  max-width: 62ch;
+}
+
+@media (max-width: 640px) {
+  .award-ledger__row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xs);
+  }
+}
+
+.award-ledger + .spec-source {
+  max-width: 78ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: var(--space-md);
+}
