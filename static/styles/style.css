@@ -6043,3 +6043,98 @@ button {
     font-size: 1.0625rem;
   }
 }
+
+/* ---- Tables and format cards, 2026-09-02 ---- */
+
+/* The rounded, shadowed frame was drawn around the container's 16px padding, so a
+   strip of section background showed inside the frame. The frame now hugs the table. */
+.container.spec-table-wrapper,
+.container.compare-table-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+  width: min(calc(100% - 32px), 60rem);
+}
+
+.spec-table-wrapper,
+.compare-table-wrapper {
+  box-shadow: 0 12px 32px rgba(34, 32, 29, 0.08);
+  background: var(--color-surface);
+}
+
+.spec-table th[scope="row"],
+.compare-table th[scope="row"] {
+  color: var(--color-heading);
+}
+
+.spec-table td,
+.compare-table td {
+  color: var(--color-text-muted);
+}
+
+.spec-table tbody tr:last-child th,
+.spec-table tbody tr:last-child td,
+.compare-table tbody tr:last-child th,
+.compare-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Demo formats as three cards, matching the price cards on /tm7/. */
+.format-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.format-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-large);
+  padding: var(--space-lg);
+  box-shadow: 0 16px 40px rgba(34, 32, 29, 0.08);
+}
+
+.format-card--lead {
+  border-top: 3px solid var(--color-primary);
+}
+
+.format-card h3 {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-card);
+}
+
+.format-card dl {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.format-card dl > div {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: var(--space-xs);
+  padding-top: 10px;
+  border-top: 1px solid var(--color-tint-border);
+}
+
+.format-card dt {
+  color: var(--color-text-faint);
+  font-size: var(--text-body-sm);
+}
+
+.format-card dd {
+  margin: 0;
+  color: var(--color-heading);
+  font-weight: 600;
+  font-size: var(--text-body-sm);
+}
+
+@media (max-width: 900px) {
+  .format-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spec-table-wrapper > .spec-source,
+.compare-table-wrapper > .spec-source {
+  padding: 12px 20px 18px;
+  margin-top: 0;
+}
