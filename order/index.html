@@ -31,6 +31,7 @@
     ]
   }
   </script>
+  <script src="https://kit.fontawesome.com/f4d2f86d5b.js" crossorigin="anonymous"></script>
 </head>
 <body id="top">
   <header class="site-header" data-sticky>
@@ -78,7 +79,6 @@
           <img width="1200" height="600" src="/static/TM7_images/de_int_master-en_thermomix_tm7-launch_Story-Photos_KA_1022_2800x1400-2x1-1.jpg" alt="A Thermomix TM7 in a bright modern kitchen" style="object-position:center 50%" loading="eager" fetchpriority="high" decoding="async">
           <div class="canon-hero__scrim"></div>
           <div class="canon-hero__copy">
-            <p class="eyebrow eyebrow--light">Thermomix&reg; TM7</p>
             <h1 id="order-hero-title">Request a free Thermomix demo</h1>
             <p class="canon-hero__lead">Tell me roughly where you are and what you like cooking.
               I will call within a working day to arrange it. The demo is free, takes around two
@@ -99,17 +99,17 @@
       </div>
       <div class="container card-grid card-grid--three">
         <article class="info-card">
-          <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+          <div class="icon-circle"><i class="fas fa-phone" aria-hidden="true"></i></div>
           <h3>Quick welcome call</h3>
           <p>We’ll chat through your cooking goals, dietary needs, and decide whether an in-person or online demo fits best.</p>
         </article>
         <article class="info-card">
-          <div class="icon-circle"><i class="fas fa-blender"></i></div>
+          <div class="icon-circle"><i class="fas fa-utensils" aria-hidden="true"></i></div>
           <h3>Tailored demonstration</h3>
           <p>Experience guided cooking live, learn tips, and see how the TM7 handles prep, cooking, and clean-up.</p>
         </article>
         <article class="info-card">
-          <div class="icon-circle"><i class="fas fa-hands-helping"></i></div>
+          <div class="icon-circle"><i class="fas fa-users" aria-hidden="true"></i></div>
           <h3>Next steps together</h3>
           <p>After your demo we’ll cover accessories, onboarding, and questions so you feel confident moving forward.</p>
         </article>
@@ -118,11 +118,11 @@
 
         <section class="page-section" id="demo-request" aria-labelledby="demo-request-title">
       <div class="container section-header">
-        <h2 id="demo-request-title"><span class="pill-heading">Tell me about your kitchen</span></h2>
-        <p>I’ll personally follow up within 24 hours to schedule your TM7 demo and share prep details.</p>
+        <h2 id="demo-request-title">Tell me about your kitchen</h2>
+        <p>I will call within one working day to arrange a time, and the demo is free with nothing to decide on the day.</p>
       </div>
       <div class="container">
-        <form action="https://formspree.io/f/xanpwand" method="POST" class="contact-form order-form" id="demo-request-form">
+        <form action="https://formspree.io/f/xanpwand" method="POST" class="contact-form order-form" id="demo-request-form" data-success="Thank you. Your request has reached Isabella and she will call within one working day to arrange your free demo.">
           <input type="hidden" name="_source" value="/order/">
           <input type="hidden" name="subject" value="Thermomixbella enquiry from /order/">
           <div class="form-grid">
@@ -174,9 +174,9 @@
           </div>
           <div class="form-field form-field--checkbox">
             <input type="checkbox" id="demo-consent" name="consent" value="yes" required>
-            <label for="demo-consent">I consent to being contacted about my Thermomix&reg; TM7 demo request and agree to the privacy policy.</label>
+            <label for="demo-consent">I consent to being contacted about my Thermomix&reg; TM7 demo request and agree to the <a href="/privacy/">privacy policy</a>.</label>
           </div>
-          <button type="submit" class="button button-primary">Send request</button>
+          <button type="submit" class="button button-primary">Book my free demo</button>
         </form>
       </div>
     </section>
@@ -188,14 +188,14 @@
       </div>
       <div class="container badge-list">
         <div class="badge-card">
-          <i class="fas fa-hands-helping" aria-hidden="true"></i>
+          <i class="fas fa-heart" aria-hidden="true"></i>
           <h3>Personal guidance</h3>
           <p>We map out your demo together, follow up with resources, and stay in touch as you explore the TM7.</p>
         </div>
         <div class="badge-card">
           <i class="fas fa-user-check" aria-hidden="true"></i>
           <h3>Official advisor</h3>
-          <p>Work with a Diamond Team Leader who supports hundreds of happy TM households across South West London.</p>
+          <p>An independent Thermomix advisor since 2016 and a Diamond Team Leader, based in Twickenham.</p>
         </div>
         <div class="badge-card">
           <i class="fas fa-users" aria-hidden="true"></i>
@@ -244,7 +244,7 @@
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.47 5.47a.75.75 0 0 1 1.06 0L8 7.94l2.47-2.47a.75.75 0 1 1 1.06 1.06L8.53 9.53a.75.75 0 0 1-1.06 0L4.47 6.53a.75.75 0 0 1 0-1.06z" fill="currentColor"/></svg>
           </button>
           <div class="order-faq-answer" id="faq-answer-4" hidden>
-            <p>For in-person demos I bring the hero ingredients—just have basic pantry items ready. Online demos include a simple shopping list if you want to cook along.</p>
+            <p>For in-person demos I bring the hero ingredients, so just have basic pantry items ready. Online demos include a simple shopping list if you want to cook along.</p>
           </div>
         </div>
         <div class="order-faq-item" role="listitem">
@@ -279,8 +279,7 @@
         <a href="#top">Thermomixbella</a>
         <p>Independent Thermomix&reg; advisor in Twickenham. In-home demos across South West London, online across the UK and Ireland.</p>
         <div class="footer-cta">
-          <a class="button button-primary" href="/order/">Request a Demo</a>
-          <a class="button button-secondary" href="/demo/">Book a Demo</a>
+          <a class="button button-primary" href="/order/">Book a free demo</a>
         </div>
         <div class="footer-social">
           <a href="https://www.instagram.com/bellathermomixbimby/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -290,9 +289,9 @@
       <div class="footer-links">
         <h3>Explore</h3>
         <a href="/tm7/">TM7 features</a>
-        <a href="#demo-request">Demo Journey</a>
-        <a href="/demo/">Book a Demo</a>
-        <a href="/order/">Request a Demo Call</a>
+        <a href="/demo/">How a demo works</a>
+        <a href="/meal-plans/">Meal plans</a>
+        <a href="/faq/">FAQ</a>
       </div>
       <div class="footer-links">
         <h3>Support</h3>
@@ -314,7 +313,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>© 2025 Thermomixbella. All rights reserved.</p>
+      <p>© 2026 Thermomixbella. All rights reserved.</p>
       <div class="footer-policies">
         <a href="/privacy/">Privacy Policy</a>
         

@@ -80,12 +80,11 @@
           <img width="1024" height="768" src="/static/images/recipe1.jpeg" alt="Two loaves of bread on a wooden board" style="object-position:center 55%" loading="eager" fetchpriority="high" decoding="async">
           <div class="canon-hero__scrim"></div>
           <div class="canon-hero__copy">
-          <p class="eyebrow eyebrow--light">Thermomixbella favourites</p>
           <h1 id="recipes-title">Thermomix TM7 recipe inspiration</h1>
-          <p class="canon-hero__lead">Discover my go-to recipes for every occasion—perfect for demos, family dinners, and weekend treats. Each selection links to Cookidoo&reg; or includes tips to recreate at home.</p>
+          <p class="canon-hero__lead">Discover my go-to recipes for every occasion, perfect for demos, family dinners, and weekend treats. Each selection links to Cookidoo&reg; or includes tips to recreate at home.</p>
           <div class="canon-hero__actions">
-            <a class="button button-primary" href="/demo/">Book a Recipe Demo</a>
-            <a class="button button-secondary" href="/order/">Request a Demo</a>
+            <a class="button button-primary" href="/order/">Book a free demo</a>
+            <a class="button button-secondary" href="/demo/">How a demo works</a>
           </div></div>
         </div>
       </div>
@@ -136,26 +135,12 @@
           <figcaption>Bread from a dough kneaded in the bowl. The function most people are sceptical about until they try it.</figcaption>
         </figure>
         <figure class="gallery-card">
-          <img width="815" height="821" src="/static/images/recipe4.jpeg" alt="A grain salad with pomegranate seeds and fresh herbs" loading="lazy">
+          <img width="815" height="721" src="/static/images/recipe4.jpeg" alt="A grain salad with pomegranate seeds and fresh herbs" loading="lazy">
           <figcaption>A herb and pomegranate grain salad. Everything chopped in the bowl, nothing chopped by hand.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="page-section" aria-labelledby="recipe-search-title">
-      <div class="container section-header">
-        <h2 id="recipe-search-title">Find a recipe idea</h2>
-        <p>Enter an ingredient or craving to receive instant inspiration.</p>
-      </div>
-      <div class="container search-tool">
-        <form class="search-form" id="recipe-search-form">
-          <label class="sr-only" for="recipe-query">Ingredient or recipe name</label>
-          <input id="recipe-query" type="search" placeholder="e.g., chickpeas, tiramisu, vegan" required>
-          <button type="submit" class="button button-primary">Search ideas</button>
-        </form>
-        <div class="search-results" id="recipe-results" aria-live="polite"></div>
-      </div>
-    </section>
 
     <section class="page-section page-section--alt" aria-labelledby="recipes-how-title">
       <div class="container section-header">
@@ -193,8 +178,8 @@
         <p>Join an upcoming demo or masterclass to see these recipes come to life.</p>
       </div>
       <div class="container cta-row">
-        <a class="button button-primary" href="/demo/">Book a Demo</a>
-        <a class="button button-secondary" href="/order/">Request a Demo</a>
+        <a class="button button-primary" href="/order/">Book a free demo</a>
+        <a class="button button-secondary" href="/demo/">How a demo works</a>
       </div>
     </section>
   </main>
@@ -205,8 +190,7 @@
         <a href="#top">Thermomixbella</a>
         <p>Independent Thermomix&reg; advisor in Twickenham. In-home demos across South West London, online across the UK and Ireland.</p>
         <div class="footer-cta">
-          <a class="button button-primary" href="/order/">Request a Demo</a>
-          <a class="button button-secondary" href="/demo/">Book a Demo</a>
+          <a class="button button-primary" href="/order/">Book a free demo</a>
         </div>
         <div class="footer-social">
           <a href="https://www.instagram.com/bellathermomixbimby/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -216,9 +200,9 @@
       <div class="footer-links">
         <h3>Explore</h3>
         <a href="/tm7/">TM7 features</a>
-        <a href="/order/#demo-request">Demo Journey</a>
-        <a href="/demo/">Book a Demo</a>
-        <a href="/order/">Request a Demo Call</a>
+        <a href="/demo/">How a demo works</a>
+        <a href="/meal-plans/">Meal plans</a>
+        <a href="/faq/">FAQ</a>
       </div>
       <div class="footer-links">
         <h3>Support</h3>
@@ -240,7 +224,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>© 2025 Thermomixbella. All rights reserved.</p>
+      <p>© 2026 Thermomixbella. All rights reserved.</p>
       <div class="footer-policies">
         <a href="/privacy/">Privacy Policy</a>
         
@@ -250,45 +234,5 @@
   </footer>
 
   <script src="/static/scripts/script.js"></script>
-  <script>
-    const recipeSuggestions = {
-      chickpeas: ['Harissa chickpea stew', 'Crunchy roasted chickpeas', 'Chickpea & spinach curry'],
-      tiramisu: ['Classic Italian tiramisu', 'Espresso-soaked ladyfinger cups', 'Strawberry tiramisu jars'],
-      vegan: ['Cauliflower tikka masala', 'Smoky bean chilli', 'Vegan chocolate pots'],
-      soup: ['Carrot & ginger soup', 'Thai coconut soup', 'Tomato & basil bisque'],
-      dessert: ['Lemon cheesecake parfait', 'Hazelnut gelato', 'Chocolate fondant'],
-    };
-
-    function matchRecipes(query) {
-      const lower = query.toLowerCase();
-      const matches = new Set();
-      Object.entries(recipeSuggestions).forEach(([keyword, ideas]) => {
-        if (keyword.includes(lower) || lower.includes(keyword)) {
-          ideas.forEach((idea) => matches.add(idea));
-        }
-      });
-      if (!matches.size) {
-        return [`Browse Cookidoo for "${query}" and save favourites to your TM7.`];
-      }
-      return Array.from(matches);
-    }
-
-    document.getElementById('recipe-search-form').addEventListener('submit', (event) => {
-      event.preventDefault();
-      const input = document.getElementById('recipe-query');
-      const results = document.getElementById('recipe-results');
-      const value = input.value.trim();
-      if (!value) {
-        results.textContent = '';
-        return;
-      }
-      const suggestions = matchRecipes(value);
-      results.replaceChildren(...suggestions.map((item) => {
-        const paragraph = document.createElement('p');
-        paragraph.textContent = item;
-        return paragraph;
-      }));
-    });
-  </script>
 </body>
 </html>
