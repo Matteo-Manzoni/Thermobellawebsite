@@ -3820,7 +3820,8 @@ container-offer{
 }
 
 .page-section--dark p > a,
-.page-section--dark li > a {
+.page-section--dark li > a,
+.page-section--dark dd > a {
   color: var(--color-on-dark);
 }
 
@@ -5891,4 +5892,154 @@ button {
 /* Submit buttons sit under the fields, left, on every form. */
 .form-actions {
   justify-content: flex-start;
+}
+
+/* ---- Price and specs on /tm7/, 2026-09-02: cards and tiles instead of raw tables ---- */
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.price-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-large);
+  padding: var(--space-lg);
+  box-shadow: 0 16px 40px rgba(34, 32, 29, 0.08);
+}
+
+.price-card--advisor {
+  border-top: 3px solid var(--color-primary);
+}
+
+.price-card h3 {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-card);
+}
+
+.price-card__figure {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm);
+}
+
+.price-card__figure span {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: var(--tracking-card);
+  color: var(--color-heading);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
+
+.price-card__alt {
+  margin: var(--space-xs) 0 0;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.price-card__note {
+  margin: var(--space-sm) 0 0;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-tint-border);
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm);
+}
+
+.price-cards + .container > p:first-child {
+  margin-top: var(--space-lg);
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spec-block {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-sm);
+  margin: 0;
+}
+
+.spec-tile {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--radius-medium);
+  padding: var(--space-md);
+}
+
+.spec-tile dt {
+  color: var(--color-on-dark-muted);
+  font-size: var(--text-body-sm);
+  margin-bottom: 6px;
+}
+
+.spec-tile dd {
+  margin: 0;
+  color: var(--color-on-dark);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: var(--tracking-card);
+  font-variant-numeric: tabular-nums;
+}
+
+.spec-tile:last-child {
+  grid-column: 1 / -1;
+}
+
+.spec-tile:last-child dd {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 400;
+}
+
+.spec-block .spec-source {
+  margin-top: var(--space-md);
+}
+
+/* Every remaining data table sits on a reading width instead of the full page. */
+.spec-table-wrapper,
+.compare-table-wrapper {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spec-table thead th,
+.compare-table thead th {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  text-transform: none;
+  border-bottom: 2px solid var(--color-tint-border);
+}
+
+@media (max-width: 640px) {
+  .price-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-tile {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .spec-tile dd {
+    font-size: 1.0625rem;
+  }
 }
