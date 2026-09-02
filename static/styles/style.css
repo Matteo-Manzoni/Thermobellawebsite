@@ -6235,3 +6235,76 @@ button {
     padding: var(--space-md);
   }
 }
+
+/* ---- How to buy, /tm7/ ---- */
+.buy-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: buy;
+}
+
+.buy-steps li {
+  counter-increment: buy;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0 var(--space-md);
+  border-top: 1px solid var(--color-tint-border);
+}
+
+.buy-steps li::before {
+  content: counter(buy);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+  padding-top: 2px;
+}
+
+.buy-steps h3 {
+  grid-column: 2;
+  margin: 0 0 4px;
+  font-size: var(--text-card);
+}
+
+.buy-steps p {
+  grid-column: 2;
+  margin: 0;
+  color: var(--color-text-muted);
+  max-width: 62ch;
+}
+
+.buy-box {
+  margin-top: var(--space-md);
+  background: var(--color-surface);
+  border-radius: var(--radius-large);
+  padding: var(--space-lg);
+  box-shadow: 0 16px 40px rgba(34, 32, 29, 0.08);
+  border-top: 3px solid var(--color-primary);
+}
+
+.buy-box h3 {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--text-card);
+}
+
+.buy-box ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--color-text-muted);
+  display: grid;
+  gap: 6px;
+}
+
+.buy-box .spec-source {
+  margin-top: var(--space-sm);
+}
+
+.buy-box__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}

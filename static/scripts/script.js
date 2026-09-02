@@ -71,6 +71,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
+  // /order/#order: arriving from "Order through Isabella" preselects the order option.
+  if (window.location.hash === '#order') {
+    const format = document.getElementById('demo-format');
+    if (format) { format.value = 'ready-to-order'; }
+    const form = document.getElementById('order');
+    if (form) { form.scrollIntoView({ block: 'start' }); }
+  }
+
   // Formspree forms submit in-page so the visitor never lands on Formspree's own
   // "thank you" page. Without JavaScript the form posts normally, which still works.
   document.querySelectorAll('form[action^="https://formspree.io/"]').forEach((form) => {
