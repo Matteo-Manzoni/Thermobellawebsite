@@ -13,7 +13,7 @@ Key facts, each stated on the page linked beside it:
   Teddington, Hampton, Kingston upon Thames, Chiswick and Brentford: /contact/
 - Virtual demos cover the United Kingdom and Ireland: /demo/
 - Vorwerk set the Thermomix TM7 price and permit no discounting, so it costs the same from every
-  advisor in the UK. Current figures and the two authorised ways to buy: /tm7/
+  advisor in the UK. Current figures: /tm7/. The two authorised ways to buy, delivery and warranty: /how-to-buy/
 - Demos are free. Three formats, 45 to 90 minutes: /demo/
 - Enquiries: 07391 585516, Isabella.spreafico@gmail.com
 
@@ -22,6 +22,7 @@ Key facts, each stated on the page linked beside it:
 - [What is a Thermomix?](https://thermomixbella.com/thermomix/): what the machine does, what it
   replaces, how guided cooking works, how it differs from a food processor or multicooker, and
   an honest answer on whether it is worth it.
+- [How to buy a Thermomix TM7 in the UK](https://thermomixbella.com/how-to-buy/): the two authorised routes, £1,349 through an advisor, free delivery in 3 to 5 working days, two-year warranty, what is in the box.
 - [Thermomix TM7](https://thermomixbella.com/tm7/): specifications checked against Vorwerk UK,
   and what a TM7 costs in the UK and Ireland.
 - [TM6 vs TM7](https://thermomixbella.com/compare/): what actually changed between generations,
