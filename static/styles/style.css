@@ -5860,3 +5860,35 @@ button {
 .page-section--dark .feature-list i {
   color: #8fd19a;
 }
+
+/* Meal-plan day cards ran the full width with 68ch of text and an empty right
+   half; two-up from tablet width. */
+@media (min-width: 900px) {
+  .plan-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
+  }
+}
+
+/* Privacy notice: 180-character lines under 48px headings. A reading measure. */
+.page-hero + .page-section .container > * {
+  max-width: 68ch;
+}
+
+/* Contact form: three uneven columns and a floating button became two even
+   columns with the message and consent full width. */
+.contact-form .form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 640px) {
+  .contact-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Submit buttons sit under the fields, left, on every form. */
+.form-actions {
+  justify-content: flex-start;
+}

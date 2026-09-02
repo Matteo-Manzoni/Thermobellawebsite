@@ -21,8 +21,9 @@
 /templates2/recipes                 /recipes/           301!
 /templates2/thermomix.html          /thermomix/         301!
 /templates2/thermomix               /thermomix/         301!
-/templates2/calculator.html         /calculator/        301!
-/templates2/calculator              /calculator/        301!
+/templates2/calculator.html         /demo/              301!
+/templates2/calculator              /demo/              301!
+/calculator/                        /demo/              301!
 /templates2/contact.html            /contact/           301!
 /templates2/contact                 /contact/           301!
 /templates2/order-your-tm7.html     /order/             301!
