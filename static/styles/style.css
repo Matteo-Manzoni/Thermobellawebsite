@@ -5787,3 +5787,76 @@ button {
     }
   }
 }
+
+/* ---- Phone density and remaining defects, 2026-09-02 ---- */
+
+/* Sections were 96px apart on a 390px screen, so a page was mostly gaps. */
+@media (max-width: 640px) {
+  .page-section {
+    padding: 56px 0;
+  }
+
+  .split-section {
+    gap: var(--space-lg);
+  }
+
+  .info-card {
+    padding: 20px;
+  }
+
+  .info-card .icon-circle {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .pill {
+    padding: 6px 12px;
+    font-size: 0.8125rem;
+  }
+
+  .food-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .food-strip__item img {
+    height: 170px;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg) var(--space-md);
+  }
+
+  .footer-brand,
+  .footer-newsletter {
+    grid-column: 1 / -1;
+  }
+}
+
+/* /tm7/ feature cards had 12px icons; give them the same tinted circle as every
+   other card. */
+.feature-card > i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* The paragraph after the price table was touching it. */
+.spec-table-wrapper + p,
+.spec-table-wrapper + .container > p:first-child {
+  margin-top: var(--space-md);
+}
+
+/* Checkmarks inside the dark eligibility cards were dark on dark. */
+.page-section--dark .feature-list i {
+  color: #8fd19a;
+}
