@@ -79,6 +79,29 @@ document.addEventListener("DOMContentLoaded", function() {
     if (form) { form.scrollIntoView({ block: 'start' }); }
   }
 
+  const orderForm = document.getElementById('order');
+  const demoFormat = document.getElementById('demo-format');
+  if (orderForm && demoFormat) {
+    const timing = orderForm.querySelector('[name="demo_timing"]');
+    const timingField = timing.closest('.form-field');
+    const button = orderForm.querySelector('[type="submit"]');
+    const demoRequired = timing.required;
+    const demoHidden = timingField.hidden;
+    const demoLabel = button.textContent;
+    const demoSuccess = orderForm.dataset.success;
+    const updateOrderForm = () => {
+      const readyToOrder = demoFormat.value === 'ready-to-order';
+      timing.required = readyToOrder ? false : demoRequired;
+      timingField.hidden = readyToOrder ? true : demoHidden;
+      button.textContent = readyToOrder ? 'Send my order request' : demoLabel;
+      orderForm.dataset.success = readyToOrder
+        ? 'Thank you. I will call within one working day to place your order.'
+        : demoSuccess;
+    };
+    demoFormat.addEventListener('change', updateOrderForm);
+    updateOrderForm();
+  }
+
   // Formspree forms submit in-page so the visitor never lands on Formspree's own
   // "thank you" page. Without JavaScript the form posts normally, which still works.
   document.querySelectorAll('form[action^="https://formspree.io/"]').forEach((form) => {
