@@ -84,15 +84,18 @@ document.addEventListener("DOMContentLoaded", function() {
   if (orderForm && demoFormat) {
     const timing = orderForm.querySelector('[name="demo_timing"]');
     const timingField = timing.closest('.form-field');
+    const guestsField = orderForm.querySelector('[name="demo_guests"]').closest('.form-field');
     const button = orderForm.querySelector('[type="submit"]');
     const demoRequired = timing.required;
     const demoHidden = timingField.hidden;
+    const demoGuestsHidden = guestsField.hidden;
     const demoLabel = button.textContent;
     const demoSuccess = orderForm.dataset.success;
     const updateOrderForm = () => {
       const readyToOrder = demoFormat.value === 'ready-to-order';
       timing.required = readyToOrder ? false : demoRequired;
       timingField.hidden = readyToOrder ? true : demoHidden;
+      guestsField.hidden = readyToOrder ? true : demoGuestsHidden;
       button.textContent = readyToOrder ? 'Send my order request' : demoLabel;
       orderForm.dataset.success = readyToOrder
         ? 'Thank you. I will call within one working day to place your order.'
